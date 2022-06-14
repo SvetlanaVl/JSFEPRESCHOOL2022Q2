@@ -57,7 +57,6 @@ header {
   font-size: 16px;
   line-height: 21px;
 }
-
 .button {
   background-color: #0D606F;
   color:#FFFFFF;
@@ -78,4 +77,67 @@ header {
   font-size: 16px;
   line-height: 21px;
   margin-left: 196px;
+}
+.background-image {
+  background-image: url(assets/img/section1.png);
+  background-size: 100% 100%;
+  min-width: 1440px;
+  min-height: 765px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+}
+h1 {
+  width: 892px;
+  height: 225px;
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 96px;
+  color: #FFFFFF;
+  margin: 31px 0 0 120px;
+
+}
+p {
+  width: 723px;
+  height: 24px;
+  font-family: 'Aleo';
+  font-style: italic;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: #FFFFFF;
+  margin: 0 0 0 120px;
+}
+.start-planning {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 892px;
+  height: 95px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  margin: 45px 0 0 120px;
+}
+input {
+  width: 560px;
+  height: 22px;
+  padding: 42px;
+  font-family: 'Aleo';
+  font-style: italic;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  color: #F2785C;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+.button-start-planning {
+  padding: 10px 32px;
+  width: 228px;
+  height: 59px;
+  font-size: 24px;
+  line-height: 32px;
+  margin-left: 85px;
 }
