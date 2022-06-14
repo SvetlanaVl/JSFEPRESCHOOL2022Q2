@@ -97,7 +97,6 @@ h1 {
   line-height: 96px;
   color: #FFFFFF;
   margin: 31px 0 0 120px;
-
 }
 p {
   width: 723px;
@@ -140,4 +139,84 @@ input {
   font-size: 24px;
   line-height: 32px;
   margin-left: 85px;
+}
+.steps {
+  width: 1177px;
+  height: 247px;
+  margin-left: 72px;
+  margin-top: 336px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+h2 {
+  width: 611px;
+  height: 53px;
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 53px;
+  color: #F2785C;
+  margin: 0 0 0 342px;
+}
+.steps-list {
+  width: 1177px;
+  height: 154px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 30px;
+}
+.steps-item {
+  width: 247px;
+  height: 154px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  gap: 31px;
+}
+.rectangle {
+  width: 100px;
+  height: 100px;
+  background: #F2785C;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 117px;
+}
+.steps-text-one {
+  width: 247px;
+  height: 24px;
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #0D606F;
+  margin-right: 2px;
+}
+.steps-text-two {
+  width: 222px;
+  height: 24px;
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #0D606F;
+}
+.steps-text-three {
+  width: 317px;
+  height: 24px;
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #0D606F;
+  margin: 0;
 }
