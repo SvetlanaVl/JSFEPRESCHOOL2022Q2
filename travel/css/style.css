@@ -143,7 +143,7 @@ input {
 }
 .steps {
   height: 247px;
-  margin-top: 336px;
+  margin-top: 303px;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -166,6 +166,7 @@ h2 {
   justify-content: space-between;
   gap: 30px;
   margin-left: 130px;
+  margin-top: -33px;
 }
 .steps-item {
   width: 247px;
@@ -173,7 +174,15 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 31px;
+  gap: 29px;
+  padding-left: 2px;
+  padding-bottom: 2px;
+}
+.steps-item:nth-child(2) {
+  padding-left: 4px;
+}
+.steps-item:last-child {
+  padding-right: 70px;
 }
 .rectangle {
   width: 100px;
@@ -216,10 +225,30 @@ h2 {
   width: 2520px;
   height: 800px;
   margin-left: -540px;
-  margin-top: 45px;
+  margin-top: 46px;
 }
 .image-destinations {
   width: 800px;
   height: 800px;
   border-radius: 16px;
+}
+.destinations-circles {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+  width: 80px;
+  height: 20px;
+  margin-left: 681px;
+  margin-top: 23px;
+}
+.button-destinations {
+  font-size: 24px;
+  line-height: 32px;
+  padding: 10px 32px;
+  width: 228px;
+  height: 59px;
+  margin-left: 606px;
+  margin-top: 40px;
 }
