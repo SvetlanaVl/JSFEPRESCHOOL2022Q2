@@ -314,3 +314,39 @@ input {
   color: #0D606F;
   font-weight: bold;
 }
+.footer {
+  width: 1440px;
+  height: 50px;
+  background-color: #0D606F;
+  display: flex;
+  margin-top: 40px;
+}
+.text-footer {
+  width: 260px;
+  height: 21px;
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #FFFFFF;
+  padding-top: 5px;
+}
+.list-footer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  width: 140.96px;
+  height: 33.65px;
+}
+.link-footer {
+  list-style: none;
+}
+.container-footer {
+  width: 690px;
+  height: 33px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 591px;
+}
