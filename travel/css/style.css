@@ -148,7 +148,7 @@ input {
   flex-direction: column;
   gap: 40px;
 }
-h2 {
+.heading {
   height: 53px;
   font-family: 'Red Hat Text';
   font-style: normal;
@@ -251,4 +251,66 @@ h2 {
   height: 59px;
   margin-left: 606px;
   margin-top: 40px;
+}
+.button-stories {
+  font-size: 24px;
+  line-height: 32px;
+  padding: 10px 35px 10px 30px;
+  width: 228px;
+  height: 59px;
+  margin-left: 607px;
+  margin-top: 40px;
+}
+.stories {
+  width: 1440px;
+  margin-top: 80px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.stories-container {
+  width: 1201px;
+  height: 1091px;
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 400;
+  color: #0D606F;
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 80px;
+  gap: 14px;
+
+}
+.image-stories {
+  width: 400px;
+  height: 250px;
+  background: url(robin-noguier-sydwCr54rf0-unsplash);
+  filter: drop-shadow(0px 4px 4px #0D606F);
+  border-radius: 16px;
+}
+.stories-heading {
+  width: 760px;
+  height: 42px;
+  font-size: 35px;
+  line-height: 42px;
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 400;
+  color: #0D606F;
+  margin: 0;
+}
+.text-stories {
+  width: 760px;
+  height: 184px;
+  font-size: 20px;
+  line-height: 24px;
+  padding-top: 4px;
+}
+.stories-four {
+  display: flex;
+  gap: 40px;
+}
+.link-text-stories {
+  color: #0D606F;
+  font-weight: bold;
 }
