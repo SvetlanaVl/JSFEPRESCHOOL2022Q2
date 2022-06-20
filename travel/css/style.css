@@ -116,7 +116,7 @@ h1 {
   font-size: 20px;
   line-height: 24px;
   color: #FFFFFF;
-  margin: -20px 0 25px 0;
+  margin: -20px 0 25px 1px;
 }
 .preview-form {
   display: flex;
@@ -130,7 +130,7 @@ h1 {
 .preview-input {
   width: 560px;
   height: 22px;
-  padding: 42px;
+  padding: 41px;
   font-family: 'Aleo';
   font-style: italic;
   font-weight: 400;
@@ -239,6 +239,23 @@ h1 {
   height: 800px;
   border-radius: 16px;
 }
+.destinations-caption {
+  width: 2520px;
+  margin-left: -540px;
+  display: flex;
+  gap: 780px;
+  margin-top: -114px;
+}
+.destinations-caption-heading {
+  width: 95px;
+  height: 42px;
+  font-size: 32px;
+  line-height: 42px;
+  color: #FFFFFF;
+}
+.destinations-caption-heading:last-child {
+  margin-left: -29px;
+}
 .destinations-form {
   display: flex;
   flex-direction: row;
@@ -248,15 +265,20 @@ h1 {
   width: 80px;
   height: 20px;
   margin-left: 681px;
-  margin-top: 23px;
+  margin-top: 32px;
 }
+.destinations-input {
+  width: 20px;
+  height: 20px;
+}
+
 .destinations-button {
   font-size: 24px;
   line-height: 32px;
   width: 228px;
   height: 59px;
   margin-left: 607px;
-  margin-top: 41px;
+  margin-top: 40px;
 }
 .stories {
   width: 1440px;
@@ -290,7 +312,6 @@ h1 {
 .stories-image {
   width: 400px;
   height: 250px;
-  background: url(robin-noguier-sydwCr54rf0-unsplash);
   filter: drop-shadow(0px 4px 4px #0D606F);
   border-radius: 16px;
 }
