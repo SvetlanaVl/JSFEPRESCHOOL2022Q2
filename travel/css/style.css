@@ -1,6 +1,6 @@
 html {
   box-sizing: border-box;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /*Плавная прокрутка по якорям*/
 }
 *, *::before, *::after {
   box-sizing: inherit;
@@ -9,6 +9,9 @@ body {
   max-width: 1440px;
   margin: 0 auto;
 }
+
+/*Header*/
+
 header {
   background-color: rgba(242, 120, 92, 0.3);
   box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
@@ -58,6 +61,9 @@ header {
   font-size: 16px;
   line-height: 21px;
 }
+.link:hover {
+  color: #F2785C; /*Ссылка меняет цвет при наведении*/
+}
 .button {
   background-color: #0D606F;
   color:#FFFFFF;
@@ -78,9 +84,14 @@ header {
   font-size: 16px;
   line-height: 21px;
   margin-left: 196px;
+  cursor: pointer; /*Курсор меняется при наведении*/
+}
+.button:hover {
+  background-color: #F2785C; /*Кнопка меняет цвет при наведении*/
+  border: 1px solid #0D606F;
 }
 .header-background-image {
-  background-image: url(../assets/img/section1.png);
+  background-image: url(../assets/img/section1.jpg);
   background-size: 100% 100%;
   min-width: 1440px;
   min-height: 765px;
@@ -88,6 +99,9 @@ header {
   z-index: -1;
   top: 0;
 }
+
+/*Section preview*/
+
 .preview {
   display: flex;
   flex-direction: column;
@@ -99,7 +113,7 @@ header {
 h1 {
   width: 892px;
   height: 225px;
-  font-family: 'Aleo';
+  font-family: 'Aleo', serif;
   font-style: normal;
   font-weight: 700;
   font-size: 80px;
@@ -110,7 +124,7 @@ h1 {
 .preview-text {
   width: 723px;
   height: 24px;
-  font-family: 'Aleo';
+  font-family: 'Aleo', serif;
   font-style: italic;
   font-weight: 700;
   font-size: 20px;
@@ -131,7 +145,7 @@ h1 {
   width: 560px;
   height: 22px;
   padding: 41px;
-  font-family: 'Aleo';
+  font-family: 'Aleo', serif;
   font-style: italic;
   font-weight: 400;
   font-size: 24px;
@@ -148,6 +162,9 @@ h1 {
   line-height: 32px;
   margin-left: 85px;
 }
+
+/*Section steps*/
+
 .steps {
   height: 247px;
   margin-top: 301px;
@@ -157,7 +174,7 @@ h1 {
 }
 .heading {
   height: 53px;
-  font-family: 'Red Hat Text';
+  font-family: 'Red Hat Text', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 40px;
@@ -203,7 +220,7 @@ h1 {
 .steps-text {
   width: 247px;
   height: 24px;
-  font-family: 'Aleo';
+  font-family: 'Aleo', serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -218,6 +235,9 @@ h1 {
 .steps-text:last-child {
   width: 317px;
 }
+
+/*Section destinations*/
+
 .destinations {
   width: 1440px;
   overflow: hidden;
@@ -270,8 +290,13 @@ h1 {
 .destinations-input {
   width: 20px;
   height: 20px;
+  appearance: none;
+  background: rgba(242, 120, 92, 0.5);
+  border-radius: 50%;
 }
-
+.destinations-input:checked {
+  background: #F2785C; /*Изменяют цвет радио-кнопки при нажатии*/
+}
 .destinations-button {
   font-size: 24px;
   line-height: 32px;
@@ -280,6 +305,9 @@ h1 {
   margin-left: 607px;
   margin-top: 40px;
 }
+
+/*Section stories*/
+
 .stories {
   width: 1440px;
   margin-top: 80px;
@@ -294,7 +322,7 @@ h1 {
 .stories-container {
   width: 1201px;
   height: 1091px;
-  font-family: 'Aleo';
+  font-family: 'Aleo', serif;
   font-style: normal;
   font-weight: 400;
   color: #0D606F;
@@ -314,13 +342,17 @@ h1 {
   height: 250px;
   filter: drop-shadow(0px 4px 4px #0D606F);
   border-radius: 16px;
+  transition: 2s; /*Время увеличения*/
+}
+.stories-image:hover {
+  transform: scale(1.2); /*Увеличивает картику*/
 }
 .stories-heading {
   width: 760px;
   height: 42px;
   font-size: 35px;
   line-height: 42px;
-  font-family: 'Aleo';
+  font-family: 'Aleo', serif;
   font-style: normal;
   font-weight: 400;
   color: #0D606F;
@@ -350,7 +382,7 @@ h1 {
 .stories-background-image {
   width: 1440px;
   height: 1331px;
-  background-image: url(../assets/img/section4.png);
+  background-image: url(../assets/img/section4.jpg);
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -358,6 +390,9 @@ h1 {
   z-index: -1;
   top: 2405px;
 }
+
+/*Footer*/
+
 .footer {
   width: 1440px;
   display: flex;
@@ -372,7 +407,7 @@ h1 {
 .footer-text {
   width: 260px;
   height: 21px;
-  font-family: 'Red Hat Text';
+  font-family: 'Red Hat Text', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
