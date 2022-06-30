@@ -62,7 +62,7 @@ header {
   line-height: 21px;
 }
 .link:hover {
-  color: #F2785C; /*Ссылка меняет цвет при наведении*/
+  color: #0D606F; /*Ссылка меняет цвет при наведении*/
 }
 .button {
   background-color: #0D606F;
@@ -438,4 +438,28 @@ h1 {
 }
 .footer-link:nth-child(4) {
   margin-top: -2px;
+}
+
+/*mobile*/
+
+.burger-nav {
+  width: 165px;
+  height: 250px;
+  background: #F2785C;
+  box-shadow: 0px 4px 3px rgba(13, 96, 111, 0.25);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.burger-nav-list {
+  width: 135px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.burger-link {
+  width: 105px;
+  text-align: right;
 }
