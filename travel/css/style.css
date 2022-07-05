@@ -16,7 +16,6 @@ header {
   background-color: rgba(242, 120, 92, 0.7);
   box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -24,19 +23,17 @@ header {
 }
 .container-content {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   width: 83%;
 }
 .logo {
   display: flex;
-  flex-wrap: wrap;
-  width: 19%;
+  width: 216px;
   height: 31px;
   margin-top: -10px;
+  gap: 3px;
 }
 .logo-text {
-  width: 84%;
   height: 31px;
   margin: 0;
   font-family: 'Magra', sans-serif;
@@ -45,12 +42,12 @@ header {
   font-size: 32px;
   line-height: 39px;
   color: #FFFFFF;
-  margin-left: 6px;
 }
 .nav {
-  width: 45%;
-  margin-left: 110px;
-  margin-right: 217px;
+  width: 539px;
+  padding-top: 4px;
+  margin-left: 157px;
+  /*margin-right: 193px;*/
 }
 .nav-list {
   display: flex;
@@ -58,10 +55,8 @@ header {
   justify-content: space-between;
   align-items: flex-start;
   padding: 0px;
-  gap: 42px;
-  width: 100%;
+  gap: 41px;
   list-style: none;
-  margin-left: 34px;
 } 
 .link {
   text-decoration: none;
@@ -86,6 +81,7 @@ header {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  margin-top: 4px;
   gap: 10px;
   width: 103px;
   height: 41px;
