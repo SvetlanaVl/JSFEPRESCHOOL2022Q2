@@ -18,20 +18,20 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  width: 1440px;
   height: 90px;
 }
 .container-content {
   display: flex;
   align-items: center;
-  width: 83%;
+  max-width: 1200px;
 }
 .logo {
   display: flex;
   width: 216px;
   height: 31px;
-  margin-top: -10px;
-  gap: 3px;
+  margin-top: -9px;
+  gap: 5px;
 }
 .logo-text {
   height: 31px;
@@ -46,8 +46,8 @@ header {
 .nav {
   width: 539px;
   padding-top: 4px;
-  margin-left: 157px;
-  /*margin-right: 193px;*/
+  margin-left: 164px;
+  margin-right: 193px;
 }
 .nav-list {
   display: flex;
@@ -109,7 +109,7 @@ header {
 /*Section preview*/
 
 .preview {
-  width: 100%;
+  width: 1440px;
   height: 422px;
   display: flex;
   justify-content: center;
@@ -119,9 +119,10 @@ header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 1200px;
 }
 h1 {
-  width: 74%;
+  width: 892px;
   font-family: 'Aleo', serif;
   font-style: normal;
   font-weight: 700;
@@ -131,7 +132,7 @@ h1 {
   margin: 0;
 }
 .preview-text {
-  width: 61%;
+  width: 723px;
   height: 24px;
   font-family: 'Aleo', serif;
   font-style: italic;
@@ -139,21 +140,20 @@ h1 {
   font-size: 20px;
   line-height: 24px;
   color: #FFFFFF;
-  padding-top: 15px;
-  margin-bottom: 55px;
+  padding-top: 14px;
+  margin-bottom: 56px;
 }
 .preview-form {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  width: 74%;
+  width: 892px;
   height: 95px;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 16px;
 }
 .preview-input {
-  width: 64%;
+  width: 560px;
   height: 22px;
   padding: 41px;
   font-family: 'Aleo', serif;
@@ -167,29 +167,31 @@ h1 {
 }
 .button-preview-form {
   padding: 10px 32px;
-  width: 26%;
+  width: 228px;
   height: 59px;
   font-size: 24px;
   line-height: 32px;
+  margin-left: 86px;
 }
 
 /*Section steps*/
 
 .steps {
-  width: 100%;
+  width: 1440px;
   height: 247px;
-  margin-top: 301px;
+  margin-top: 317px;
   display: flex;
   justify-content: center;
 }
 .container-steps {
-  width: 81%;
+  width: 1170px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: 40px;
 }
 .heading {
-  width: 52%;
+  width: 622px;
   height: 53px;
   font-family: 'Red Hat Text', sans-serif;
   font-style: normal;
@@ -200,7 +202,7 @@ h1 {
   text-align: center;
 }
 .steps-three-columns {
-  width: 100%;
+  width: 1177px;
   height: 154px;
   display: flex;
   justify-content: space-between;
@@ -208,7 +210,7 @@ h1 {
   margin-top: -33px;
 }
 .steps-columns {
-  width: 21%;
+  width: 247px;
   height: 154px;
   display: flex;
   flex-direction: column;
@@ -256,7 +258,10 @@ h1 {
 .destinations {
   width: 1440px;
   overflow: hidden;
-  margin-top: 96px;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .destinations-slider {
   display: flex;
@@ -266,8 +271,7 @@ h1 {
   gap: 60px;
   width: 2520px;
   height: 800px;
-  margin-left: -540px;
-  margin-top: 46px;
+  margin-top: 12px;
 }
 .destinations-image {
   width: 800px;
@@ -276,7 +280,6 @@ h1 {
 }
 .destinations-caption {
   width: 2520px;
-  margin-left: -540px;
   display: flex;
   gap: 780px;
   margin-top: -114px;
@@ -291,6 +294,14 @@ h1 {
 .destinations-caption-heading:last-child {
   margin-left: -29px;
 }
+.container-destinations {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 36px;
+  padding-top: 33px;
+}
 .destinations-form {
   display: flex;
   flex-direction: row;
@@ -299,8 +310,6 @@ h1 {
   gap: 10px;
   width: 80px;
   height: 20px;
-  margin-left: 681px;
-  margin-top: 32px;
 }
 .destinations-input {
   width: 20px;
@@ -317,16 +326,23 @@ h1 {
   line-height: 32px;
   width: 228px;
   height: 59px;
-  margin-left: 607px;
-  margin-top: 40px;
 }
 
 /*Section stories*/
 
 .stories {
   width: 1440px;
-  margin-top: 80px;
-  
+  padding-top: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container-stories {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .stories-background {
   width: 1440px;
@@ -407,13 +423,14 @@ h1 {
 .footer {
   width: 1440px;
   display: flex;
+  padding-top: 10px;
+  justify-content: space-around;
 }
-.footer-container {
-  width: 690px;
+.container-footer {
+  width: 1440px;
   height: 33px;
   display: flex;
   justify-content: space-between;
-  margin-left: 449px;
 }
 .footer-text {
   width: 260px;
@@ -433,26 +450,21 @@ h1 {
   gap: 20px;
   width: 141px;
   height: 33px;
+  padding: 0;
 }
 .footer-link {
   list-style: none;
-  margin-top: -1px;
+  padding-top: 5px;
 }
 .footer-image-rs {
-  width: 200%;
-  height: auto;
-}
-.footer-image-github {
   width: 100%;
   height: auto;
-  margin-left: 40px;
-  margin-top: -8px;
+  margin-top: -5px;
 }
-.footer-link:last-child {
-  margin-top: 1px;
-}
-.footer-link:nth-child(4) {
-  margin-top: -2px;
+.footer-image-github {
+  width: 300%;
+  height: auto;
+  margin-top: -5px;
 }
 
 /*mobile*/
@@ -466,6 +478,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 20px;
 }
 .burger-nav-list {
   width: 135px;
