@@ -179,12 +179,13 @@ h1 {
 .steps {
   width: 1440px;
   height: 247px;
-  margin-top: 317px;
+  margin-top: 338px;
   display: flex;
   justify-content: center;
 }
 .container-steps {
-  width: 1170px;
+  width: 1177px;
+  height: 247px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -201,29 +202,21 @@ h1 {
   color: #F2785C;
   text-align: center;
 }
-.steps-three-columns {
-  width: 1177px;
-  height: 154px;
+.steps-heading {
+  margin: 0;
+  margin-top: -10px;
+}
+.steps-icon {
+  width: 996px;
   display: flex;
   justify-content: space-between;
-  gap: 30px;
-  margin-top: -33px;
+  margin-left: -32px;
 }
-.steps-columns {
-  width: 247px;
-  height: 154px;
+.steps-text-icon {
+  width: 1177px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 29px;
-  padding-left: 2px;
-  padding-bottom: 2px;
-}
-.steps-columns:nth-child(2) {
-  padding-left: 4px;
-}
-.steps-columns:last-child {
-  padding-right: 70px;
+  justify-content: space-between;
+  margin-top: -10px;
 }
 .rectangle {
   width: 100px;
@@ -233,6 +226,9 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.rectangle:nth-child(2) {
+  margin-left: 32px;
 }
 .steps-text {
   width: 247px;
@@ -248,6 +244,7 @@ h1 {
 }
 .steps-text:nth-child(2) {
   width: 222px;
+  margin-left: 70px;
 }
 .steps-text:last-child {
   width: 317px;
@@ -258,7 +255,7 @@ h1 {
 .destinations {
   width: 1440px;
   overflow: hidden;
-  margin-top: 80px;
+  margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -470,11 +467,22 @@ h1 {
 /*mobile*/
 
 @media (max-width: 390px) {
+
+  /*header*/
+
   header {
-    width: 358px;
+    width: 390px;
     height: 32px;
     background-color: transparent;
     box-shadow: none;
+    margin-top: 43px;
+  }
+  .container-content,
+  .container-preview,
+  .container-steps,
+  .steps-icon,
+  .steps-text-icon {
+    max-width: 360px;
   }
   .logo-text, .nav, .button-header, h1, .preview-text {
     display: none;
@@ -482,7 +490,14 @@ h1 {
   .header-background-image {
     width: 390px;
     height: 251px;
-    background-color: linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 25.1%);
+    background-image: url(../assets/img/mobile-section1.jpg);
+  }
+
+  /*section preview*/
+  .preview {
+    width: 390px;
+    height: 120px;
+    padding-top: 67px;
   }
   .preview-form {
     width: 360px;
@@ -491,22 +506,75 @@ h1 {
   .preview-input {
     width: 226px;
     height: 11px;
+    padding: 16px;
     font-size: 14px;
     line-height: 17px;
   }
   .button-preview-form {
     width: 92px;
     height: 30px;
-    font-size: 24px;
-    line-height: 32px;
-    margin-left: 86px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 32px;
-    gap: 10px;
+    margin-left: 33px;
+    margin-top: 0;
+    font-size: 11px;
+    line-height: 15px;
+    padding: 0;
   }
+
+  /*section steps*/
+
+  .steps {
+    width: 390px;
+    height: 153px;
+    margin-top: 22px;
+  }
+  .container-steps {
+    gap: 20px;
+  }
+  .heading {
+    width: 217px;
+    height: 19px;
+    font-size: 14px;
+    line-height: 19px;
+    margin-top: 0;
+  }
+  .steps-icon {
+    margin-left: 0;
+  }
+  .rectangle {
+    width: 70px;
+    height: 70px;
+  }
+  .rectangle:nth-child(2) {
+    margin-left: 0;
+  }
+  .steps-vector {
+    width: 35px;
+    height: 31px;
+  }
+  .steps-vector:nth-child(2) {
+    height: 35px;
+  }
+  .steps-vector:last-child {
+    width: 40px;
+  }
+  .steps-text {
+    width: 94px;
+    height: 22px;
+    font-size: 10px;
+    line-height: 12px;
+    margin-top: 0;
+    padding-top: 10px;
+    text-align: left;
+  }
+  .steps-text:nth-child(2) {
+    width: 111px;
+    margin-left: 0;
+  }
+  .steps-text:last-child {
+    width: 98px;
+    text-align: end;
+  }
+  
 }
 
 .burger-nav {
