@@ -685,15 +685,34 @@ h1 {
   .stories-button {
     font-size: 11px;
     line-height: 15px;
-    padding: 10px 10px 10px 27px;
+    padding: 11px 10px 10px 27px;
     width: 92px;
     height: 30px;
     margin-left: 149px;
-    margin-top: 56px;
+    margin-top: 57px;
     background-image: url(../assets/svg/mobile-arrow.svg);
     background-position: 18% 45%;
   }
 
+  /*footer*/
+
+  .footer {
+    width: 390px;
+    padding-top: 10px;
+    justify-content: center;
+  }
+  .container-footer {
+    width: 360px;
+    height: 65px;
+    justify-content: center;
+  }
+  .footer-list-hide, .footer-text {
+    display: none;
+  }
+  .footer-list {
+    padding-left: 5px;
+    margin-top: 9px;
+  }
 }
 
 .burger-nav {
