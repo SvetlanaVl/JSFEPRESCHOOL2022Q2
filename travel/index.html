@@ -68,9 +68,21 @@
         <h2 class="heading">POPULAR DESTINATIONS</h2>
       </div>
       <div class="destinations-slider">
-        <img class="destinations-image" src="assets/img/slider1.jpg" alt="Spain">
-        <img class="destinations-image" src="assets/img/slider2.jpg" alt="Japan">
-        <img class="destinations-image" src="assets/img/slider3.jpg" alt="USA">
+        <picture>
+          <source media="(min-width: 400px)" srcset="assets/img/slider1.jpg">
+          <source media="(max-width: 390px)" srcset="assets/img/mobile-slider1.jpg">
+          <img class="destinations-image" src="assets/img/slider1.jpg" alt="Spain">
+        </picture>
+        <picture>
+          <source media="(min-width: 400px)" srcset="assets/img/slider2.jpg">
+          <source media="(max-width: 390px)" srcset="assets/img/mobile-slider2.jpg">
+          <img class="destinations-image" src="assets/img/slider2.jpg" alt="Japan">
+        </picture>
+        <picture>
+          <source media="(min-width: 400px)" srcset="assets/img/slider3.jpg">
+          <source media="(max-width: 390px)" srcset="assets/img/mobile-slider3.jpg">
+          <img class="destinations-image" src="assets/img/slider3.jpg" alt="USA">
+        </picture>
       </div>
       <div class="destinations-caption">
         <p class="heading destinations-caption-heading">SPAIN</p>
@@ -83,7 +95,7 @@
         <input class="destinations-input" name="slider" type="radio" checked>
         <input class="destinations-input" name="slider" type="radio">
       </form>
-      <button class="button destinations-button"><img class="button-arrow" src="assets/svg/arrow.svg" alt="arrow">Find More</button>
+      <button class="button destinations-button">Find More</button>
       </div>
     </section>
     <section class="stories" id="stories">
@@ -121,7 +133,7 @@
             </div>
           </div>
         </div>
-        <button class="button stories-button"><img class="button-arrow" src="assets/svg/arrow.svg" alt="arrow">See More</button>
+        <button class="button stories-button">See More</button>
       </div>
         <div class="stories-background-image"></div>
     </section>
