@@ -341,6 +341,11 @@ h1 {
   background-repeat: no-repeat;
   background-position: 18% 45%;
 }
+.destinations-arrow-left,
+.destinations-arrow-right {
+  display: none;
+}
+
 
 /*Section stories*/
 
@@ -430,6 +435,9 @@ h1 {
   background-position: 18% 45%;
 }
 
+.burger-menu {
+  display: none;
+}
 
 /*Footer*/
 
@@ -493,8 +501,6 @@ h1 {
   /*header*/
 
   header {
-    /*width: 390px;
-    height: 251px;*/
     background-image: url(../assets/img/mobile-section1.jpg);
   }
   .header-background-image {
@@ -503,7 +509,11 @@ h1 {
     background-color: transparent;
     box-shadow: none;
   }
-
+  .header-box-shadow {
+    box-shadow: none;
+    width: 390px;
+    height: 75px;
+  }
   .container-content,
   .container-preview,
   .container-steps,
@@ -614,7 +624,7 @@ h1 {
     width: 1120px;
     height: 210px;
     margin-top: 8px;
-    margin-right: -757px;
+    margin-right: -760px;
   }
   .destinations-image {
     width: 360px;
@@ -624,8 +634,8 @@ h1 {
   .destinations-caption {
     width: 1120px;
     gap: 321px;
-    margin-top: -234px;
-    margin-right: -788px;
+    margin-top: -235px;
+    margin-right: -790px;
   }
   .destinations-caption-heading {
     width: 60px;
@@ -659,6 +669,31 @@ h1 {
     background-image: url(../assets/svg/mobile-arrow.svg);
     background-position: 15% 45%;
   }
+  .destinations-arrow-left,
+  .destinations-arrow-right {
+    display: contents;
+  }
+  .destinations-arrow-left,
+  .destinations-arrow-right {
+    display: inherit;
+  }
+  .destinations-arrow-left {
+    background: url(../assets/svg/arrow-up-bold-left.svg);
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 20px;
+    top: 574px;
+  }
+  .destinations-arrow-right {
+    background: url(../assets/svg/arrow-up-bold-right.svg);
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 340px;
+    top: 573px;
+  }
+  
 
   /*section stories*/
 
@@ -676,12 +711,13 @@ h1 {
   }
   .stories-background {
     width: 390px;
-    height: 666px;
+    height: 629px;
+    margin-top: -1px;
   }
   .stories-container {
     width: 360px;
     height: 565px;
-    padding-top: 49px;
+    padding-top: 11px;
     gap: 11px;
   }
   .stories-four {
@@ -715,7 +751,7 @@ h1 {
     width: 92px;
     height: 30px;
     margin-left: 149px;
-    margin-top: 59px;
+    margin-top: 21px;
     background-image: url(../assets/svg/mobile-arrow.svg);
     background-position: 18% 45%;
   }
