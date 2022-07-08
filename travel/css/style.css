@@ -811,25 +811,59 @@ h1 {
   }
 }
 
-.burger-nav {
+.burger-menu {
   width: 165px;
   height: 250px;
   background: #F2785C;
   box-shadow: 0px 4px 3px rgba(13, 96, 111, 0.25);
   border-radius: 10px;
+}
+.hamburger-burger {
+  width: 30px;
+  height: 30px;
+  margin-top: 8px;
+  margin-left: 8px;
+  padding-top: 5px;
+}
+.line-burger {
+  width: 20px;
+  height: 2px;
+  background-color: #FFFFFF;
+  display: block;
+  margin: 4px auto;
+  border-radius: 3px;
+}
+.line-burger:first-child {
+  transform: translateY(13px) rotate(45deg);
+}
+.line-burger:last-child {
+  transform: translateY(-13px) rotate(-45deg);
+  margin-top: 24px;
+}
+.burger-nav {
+  width: 151px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 20px;
+  align-items: flex-end;
+  margin-top: 2px;
+  padding-top: 12px;
 }
 .burger-nav-list {
-  width: 135px;
+  width: 110px;
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin: 0;
+  padding: 0;
 }
 .burger-link {
-  width: 105px;
+  width: 110px;
   text-align: right;
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
 }
