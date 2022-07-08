@@ -16,7 +16,6 @@ header {
   background: url(../assets/img/section1.jpg);
   background-repeat: no-repeat;
   background-position: center 0;
-  
 }
 .header-background-image {
   background-color: rgba(242, 120, 92, 0.7);
@@ -55,6 +54,25 @@ header {
   font-size: 32px;
   line-height: 39px;
   color: #FFFFFF;
+}
+.hamburger {
+  width: 35px;
+  height: 32px;
+  display: none;
+  margin-top: 3px;
+  margin-right: 6px;
+}
+.line {
+  width: 26px;
+  height: 3px;
+  background-color: #FFFFFF;
+  display: block;
+  margin: 4px auto;
+  border-radius: 3px;
+}
+
+.hamburger:hover{
+  cursor: pointer;
 }
 .nav {
   width: 539px;
@@ -435,9 +453,6 @@ h1 {
   background-position: 18% 45%;
 }
 
-.burger-menu {
-  display: none;
-}
 
 /*Footer*/
 
@@ -521,8 +536,20 @@ h1 {
   .steps-text-icon {
     max-width: 360px;
   }
+  .container-content-mobile {
+    height: 75px;
+    align-items: flex-end;
+  }
   .logo-text, .nav, .button-header, h1, .preview-text {
     display: none;
+  }
+  .logo {
+    justify-content: space-between;
+    width: 360px;
+  }
+  .hamburger {
+    display: inherit;
+    display: block;
   }
   
   /*section preview*/
@@ -671,7 +698,7 @@ h1 {
   }
   .destinations-arrow-left,
   .destinations-arrow-right {
-    display: contents;
+    display: inherit;
   }
   .destinations-arrow-left,
   .destinations-arrow-right {
