@@ -14,116 +14,166 @@
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="assets/svg/logo.svg" alt="logo">
-      <p class="logo-text">Travel Portal</p>
+    <div class="header-background-image">
+      <div class="header-box-shadow">
+        <div class="container-content container-content-mobile">
+          <div class="logo">
+            <img src="assets/svg/logo.svg" alt="logo">
+            <p class="logo-text">Travel Portal</p>
+            <div class="hamburger">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li><a class="link" href="#preview">How It Works</a></li>
+              <li><a class="link" href="#steps">Plan Your Trip</a></li>
+              <li><a class="link" href="#destinations">Destinations</a></li>
+              <li><a class="link" href="#stories">Travel Stories</a></li>
+            </ul>
+          </nav>
+          <button class="button button-header">Login</button>
+        </div>
+      </div>
     </div>
-    <nav class="nav">
-      <ul class="nav-list">
-        <li><a class="link" href="#preview">How It Works</a></li>
-        <li><a class="link" href="#steps">Plan Your Trip</a></li>
-        <li><a class="link" href="#destinations">Destinations</a></li>
-        <li><a class="link" href="#stories">Travel Stories</a></li>
-      </ul>
-    </nav>
-    <button class="button">Login</button>
-    <div class="header-background-image"></div>
   </header>
   <main>
     <section class="preview" id="preview">
+      <div class="preview-background-image">
+      <div class="container-content container-preview">
       <h1>Explore the beauty of the World</h1>
       <p class="preview-text">Receive personalized recommendations for countries, hotels, activities and more</p>
       <form class="preview-form">
         <input class="preview-input" type="text" value="What would you like to do?">
         <button class="button button-preview-form">Start Planning</button>
       </form>
+      </div>
+      </div>
     </section>
     <section class="steps" id="steps">
-      <h2 class="heading">3 STEPS TO THE PERFECT TRIP</h2>
-      <div class="steps-three-columns">
-        <div class="steps-columns">
-          <div class="rectangle">
-            <img src="assets/svg/section2-1.svg" alt="What you want">
-          </div>
-          <p class="steps-text">Tell us what you want to do</p>
+      <div class="container-content container-steps">
+      <h2 class="heading steps-heading">3 STEPS TO THE PERFECT TRIP</h2>
+      <div class="steps-icon">
+        <div class="rectangle">
+          <img class="steps-vector" src="assets/svg/section2-1.svg" alt="What you want">
         </div>
-        <div class="steps-columns">
-          <div class="rectangle">
-            <img src="assets/svg/section2-2.svg" alt="Preferable dates">
-          </div>
-          <p class="steps-text">Share us preferable dates</p>
+        <div class="rectangle">
+          <img class="steps-vector" src="assets/svg/section2-2.svg" alt="Preferable dates">
         </div>
-        <div class="steps-columns">
-          <div class="rectangle">
-            <img src="assets/svg/section2-3.svg" alt="Recommendations">
-          </div>
-          <p class="steps-text">We will give you recommendations</p>
+        <div class="rectangle">
+          <img class="steps-vector" src="assets/svg/section2-3.svg" alt="Recommendations">
         </div>
+      </div>
+      <div class="steps-text-icon">
+        <p class="steps-text">Tell us what you want to do</p>
+        <p class="steps-text">Share us preferable dates</p>
+        <p class="steps-text">We will give you recommendations</p>
+      </div>
       </div>
     </section>
     <section class="destinations" id="destinations">
-      <h2 class="heading">POPULAR DESTINATIONS</h2>
+      <div class="container-content">
+        <h2 class="heading">POPULAR DESTINATIONS</h2>
+      </div>
       <div class="destinations-slider">
-        <img class="destinations-image" src="assets/img/slider1.jpg" alt="Spain">
-        <img class="destinations-image" src="assets/img/slider2.jpg" alt="Japan">
-        <img class="destinations-image" src="assets/img/slider3.jpg" alt="USA">
+        <picture>
+          <source media="(min-width: 400px)" srcset="assets/img/slider1.jpg">
+          <source media="(max-width: 390px)" srcset="assets/img/mobile-slider1.jpg">
+          <img class="destinations-image" src="assets/img/slider1.jpg" alt="Spain">
+        </picture>
+        <picture>
+          <source media="(min-width: 400px)" srcset="assets/img/slider2.jpg">
+          <source media="(max-width: 390px)" srcset="assets/img/mobile-slider2.jpg">
+          <img class="destinations-image" src="assets/img/slider2.jpg" alt="Japan">
+        </picture>
+        <picture>
+          <source media="(min-width: 400px)" srcset="assets/img/slider3.jpg">
+          <source media="(max-width: 390px)" srcset="assets/img/mobile-slider3.jpg">
+          <img class="destinations-image" src="assets/img/slider3.jpg" alt="USA">
+        </picture>
       </div>
       <div class="destinations-caption">
         <p class="heading destinations-caption-heading">SPAIN</p>
         <p class="heading destinations-caption-heading">JAPAN</p>
         <p class="heading destinations-caption-heading">USA</p>
       </div>
+      <div class="container-content container-destinations">
       <form class="destinations-form">
         <input class="destinations-input" name="slider" type="radio">
         <input class="destinations-input" name="slider" type="radio" checked>
         <input class="destinations-input" name="slider" type="radio">
       </form>
-      <button class="button destinations-button"><img class="button-arrow" src="assets/svg/arrow.svg" alt="arrow">Find More</button>
+      <button class="button destinations-button">Find More</button>
+      </div>
+      <div class="destinations-arrow-left"></div>
+      <div class="destinations-arrow-right"></div>
     </section>
     <section class="stories" id="stories">
-      <h2 class="heading">TRAVEL STORIES</h2>
+      <div class="container-content">
+        <h2 class="heading">TRAVEL STORIES</h2>
+      </div>
+      <div class="stories-background-image">
       <div class="stories-background">
-        <div class="stories-container">
+        <div class="container-content stories-container">
           <div class="stories-four">
-            <img class="stories-image" src="assets/img/section4-1.jpg" alt="first story">
+            <picture>
+              <source media="(min-width: 400px)" srcset="assets/img/section4-1.jpg">
+              <source media="(max-width: 390px)" srcset="assets/img/mobile-section4-1.jpg">
+              <img class="stories-image" src="assets/img/section4-1.jpg" alt="first story">
+            </picture>
             <div class="container-text-stories">
               <p class="stories-heading">10 Photos of Attractive Thailand</p>
-              <p class="stories-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit... <a class="stories-text-link" href="#">Read More</a></p>
+              <p class="stories-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla<span class="mobile-hide"> pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</span>.Lorem ipsum dolor sit a<span class="mobile-hide">met, consectetur adipiscing elit</span>... <a class="stories-text-link" href="#">Read More</a></p>
             </div>
           </div>
           <div class="stories-four">
-            <img class="stories-image" src="assets/img/section4-2.jpg" alt="second story">
+            <picture>
+              <source media="(min-width: 400px)" srcset="assets/img/section4-2.jpg">
+              <source media="(max-width: 390px)" srcset="assets/img/mobile-section4-2.jpg">
+              <img class="stories-image" src="assets/img/section4-2.jpg" alt="second story">
+            </picture>
             <div>
               <p class="stories-heading">Canyonlands National Park, Utah</p>
-              <p class="stories-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit... <a class="stories-text-link" href="#">Read More</a></p>
+              <p class="stories-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla<span class="mobile-hide"> pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</span>.Lorem ipsum dolor sit a<span class="mobile-hide">met, consectetur adipiscing elit</span>... <a class="stories-text-link" href="#">Read More</a></p>
             </div>
           </div>
           <div class="stories-four">
-            <img class="stories-image" src="assets/img/section4-3.jpg" alt="third story">
+            <picture>
+              <source media="(min-width: 400px)" srcset="assets/img/section4-3.jpg">
+              <source media="(max-width: 390px)" srcset="assets/img/mobile-section4-3.jpg">
+              <img class="stories-image" src="assets/img/section4-3.jpg" alt="third story">
+            </picture>
             <div>
               <p class="stories-heading">I left my heart in the Mountains!</p>
-              <p class="stories-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit... <a class="stories-text-link" href="#">Read More</a></p>
+              <p class="stories-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla<span class="mobile-hide"> pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</span>.Lorem ipsum dolor sit a<span class="mobile-hide">met, consectetur adipiscing elit</span>... <a class="stories-text-link" href="#">Read More</a></p>
             </div>
           </div>
           <div class="stories-four">
-            <img class="stories-image" src="assets/img/section4-4.jpg" alt="fourth story">
+            <picture>
+              <source media="(min-width: 400px)" srcset="assets/img/section4-4.jpg">
+              <source media="(max-width: 390px)" srcset="assets/img/mobile-section4-4.jpg">
+              <img class="stories-image" src="assets/img/section4-4.jpg" alt="fourth story">
+            </picture>
             <div>
               <p class="stories-heading">The Longest journey in my life!</p>
-              <p class="stories-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit... <a class="stories-text-link" href="#">Read More</a></p>
+              <p class="stories-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla<span class="mobile-hide"> pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</span>.Lorem ipsum dolor sit a<span class="mobile-hide">met, consectetur adipiscing elit</span>... <a class="stories-text-link" href="#">Read More</a></p>
             </div>
           </div>
         </div>
-        <button class="button stories-button"><img class="button-arrow" src="assets/svg/arrow.svg" alt="arrow">See More</button>
-        <div class="stories-background-image"></div>
-    </div>
+        <button class="button stories-button">See More</button>
+      </div>
+      </div>
     </section>
   </main>
   <footer class="footer">
-    <ul class="footer-list">
+    <div class="footer-background-image">
+    <div class="container-content container-footer">
+    <ul class="footer-list footer-list-hide">
       <li class="footer-link"><a href="https://rs.school/js/"  target="_blank"><img class="footer-image-rs" src="assets/svg/school.svg" alt="logo rs school"></a></li>
       <li class="footer-link"><a href="https://github.com/SvetlanaVl"  target="_blank"><img class="footer-image-github" src="assets/svg/github-my.svg" alt="logo github"></a></li>
     </ul>
-    <div class="footer-container">
       <p class="footer-text">All Rights Reserved &copy; Travel Portal</p>
       <ul class="footer-list">
         <li class="footer-link"><a href="https://github.com/SvetlanaVl" target="_blank"><img src="assets/svg/footer1.svg" alt="Instagram"></a></li>
@@ -131,7 +181,24 @@
         <li class="footer-link"><a href="#"><img src="assets/svg/footer3.svg" alt="Twitter"></a></li>
       </ul>
     </div>
+    </div>
   </footer>
+  <div class="burger-menu">
+    <div class="hamburger-burger">
+      <span class="line-burger"></span>
+      <span class="line-burger"></span>
+    </div>
+    <nav class="burger-nav">
+      <ul class="burger-nav-list">
+        <li class="burger-link"><a class="link" href="#preview">How It Works</a></li>
+        <li class="burger-link"><a class="link burger-link" href="#steps">Plan Your Trip</a></li>
+        <li class="burger-link"><a class="link burger-link" href="#destinations">Destinations</a></li>
+        <li class="burger-link"><a class="link burger-link" href="#stories">Travel Stories</a></li>
+        <li class="burger-link"><a class="link burger-link" href="#">Account</a></li>
+        <li class="burger-link"><a class="link burger-link" href="#">Social Media</a></li>
+      </ul>
+    </nav>
+  </div>
   <script src="index.js"></script>
 </body>
 </html>
