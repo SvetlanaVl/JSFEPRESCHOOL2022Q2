@@ -758,7 +758,7 @@ h1 {
     position: absolute;
     width: 30px;
     height: 30px;
-    left: 340px;
+    right: 20px;
     top: 573px;
   }
   
@@ -777,7 +777,7 @@ h1 {
   .stories-container-content {
     height: 565px;
     padding-top: 11px;
-    gap: 11px;
+    gap: 7px;
     margin-bottom: 21px;
   }
   .stories-four {
@@ -838,6 +838,21 @@ h1 {
 
 /*max-width = 390px*/
 
+@media (max-width: 380px) {
+  .destinations-arrow-left {
+    left: 10px;
+  }
+  .destinations-arrow-right {
+    right: 10px;
+  }
+  .destinations-caption {
+    width: 1083px;
+  }
+  .destinations-slider {
+    margin-right: -764px;
+  }
+}
+
 @media (max-width: 370px) {
   .preview-form {
     width: 310px;
@@ -852,11 +867,27 @@ h1 {
     font-size: 10px;
   }
 
+  .destinations-image {
+    width: 332px;
+  }
+  .destinations-slider {
+    margin-right: -703px;
+  }
+
   .stories-image {
     width: 135px;
     height: 110px;
   }
   
+}
+
+@media (max-width: 334px) {
+  .destinations-image {
+    width: 311px;
+  }
+  .destinations-slider {
+    margin-right: -659px;
+  }
 }
 
 .burger-menu {
