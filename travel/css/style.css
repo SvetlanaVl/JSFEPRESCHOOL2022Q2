@@ -8,8 +8,9 @@ html {
 
 
 .container-content {
-  max-width: 1200px;
+  max-width: 1230px;
   margin: 0 auto;
+  padding: 0 15px;
 }
 
 
@@ -93,7 +94,7 @@ html {
   line-height: 21px;
 }
 .link:hover {
-  color: #0D606F; /*Ссылка меняет цвет при наведении*/
+  color: #e74723; /*Ссылка меняет цвет при наведении*/
 }
 .button {
   background-color: #0D606F;
@@ -118,11 +119,11 @@ html {
   cursor: pointer; /*Курсор меняется при наведении*/
 }
 .button:hover {
-  background-color: #F2785C; /*Кнопка меняет цвет при наведении*/
+  background-color: #227c8c; /*Кнопка меняет цвет при наведении*/
   border: 1px solid #0D606F;
 }
 
-.burger-menu {
+.burger-menu, .hamburger-screen-dimming {
   display: none;
 }
 
@@ -594,7 +595,8 @@ h1 {
   .container-content,
   .steps-icon,
   .steps-text-icon {
-    max-width: 360px;
+    max-width: 370px;
+    padding: 0 5px;
   }
   .container-content-mobile {
     height: 75px;
@@ -612,7 +614,8 @@ h1 {
     justify-content: space-between;
   }
   .hamburger,
-  .burger-menu {
+  .burger-menu,
+  .hamburger-screen-dimming {
     display: block;
   }
   .hamburger-screen-dimming {
