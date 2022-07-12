@@ -272,11 +272,11 @@ h1 {
   border-radius: 16px;
 }
 .destinations-caption {
-  width: 2520px;
+  width: 175vw;
   display: flex;
-  gap: 782px;
+  gap: 55vw;
   margin-top: -109px;
-  margin-bottom: 23px;
+  margin-bottom: 10vw;
 }
 .destinations-caption-heading {
   height: 42px;
@@ -488,11 +488,18 @@ h1 {
   .steps-icon {
     margin-left: 0px;
   }
+
+  .destinations-caption-heading {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 810px) {
+  .logo {
+    gap: 2px;
+  }
   .logo-text {
-    font-size: 22px;
+    font-size: 18px;
   }
   .link {
     font-size: 12px;
@@ -512,6 +519,13 @@ h1 {
     font-size: 18px;
     margin-left: 176px;
     padding: 0;
+  }
+
+  .destinations-caption {
+    gap: 54vw;
+  }
+  .destinations-caption-heading {
+    font-size: 26px;
   }
 
   .stories-image {
@@ -549,15 +563,37 @@ h1 {
   }
 
   .preview-form {
-    width: 385px;
+    width: 374px;
   }
   .button-preview-form {
     width: 145px;
-    margin-left: 13px;
+    margin-left: 3px;
+  }
+
+  .destinations-caption {
+    gap: 53vw;
+    margin-top: -87px;
+  }
+  .destinations-caption-heading {
+    font-size: 24px;
   }
 
   .stories-image {
     height: 100px;
+  }
+
+}
+
+@media (max-width: 545px) {
+  h1 {
+    font-size: 60px;
+  }
+  
+  .destinations-caption {
+    gap: 52vw;
+  }
+  .destinations-caption-heading {
+    font-size: 23px;
   }
 
 }
@@ -572,6 +608,13 @@ h1 {
     font-size: 18px;
   }
 
+  .destinations-caption {
+    margin-top: -71px;
+  }
+  .destinations-caption-heading {
+    font-size: 20px;
+  }
+
   .stories-image {
     max-width: 155px;
     height: 100px;
@@ -584,6 +627,10 @@ h1 {
   }
 }
 @media (max-width: 413px) {
+  .destinations-caption-heading {
+    font-size: 18px;
+  }
+  
   .stories-heading {
     font-size: 14px;
   }
