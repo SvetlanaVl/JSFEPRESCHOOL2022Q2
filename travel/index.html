@@ -13,48 +13,47 @@
   <title>travel</title>
 </head>
 <body>
-  <header class="header">
-        <div class="header-background-color">
-          <div class="container-content">
-            <div class="header-container-content container-content-mobile">
-              <div class="logo">
-                <img src="assets/svg/logo.svg" alt="logo">
-                <p class="logo-text">Travel Portal</p>
-                <div class="hamburger">
-                  <span class="line"></span>
-                  <span class="line"></span>
-                  <span class="line"></span>
-                </div>
-              </div>
-              <nav class="nav">
-                <ul class="nav-list">
-                  <li><a class="link" href="#preview">How It Works</a></li>
-                  <li><a class="link" href="#steps">Plan Your Trip</a></li>
-                  <li><a class="link" href="#destinations">Destinations</a></li>
-                  <li><a class="link" href="#stories">Travel Stories</a></li>
-                </ul>
-              </nav>
-              <button class="button button-header">Login</button>
-              <div class="hamburger-screen-dimming"></div>
-              <div class="burger-menu">
-                <div class="hamburger-close">
-                  <span class="line-burger"></span>
-                  <span class="line-burger"></span>
-                </div>
-                <nav class="burger-nav">
-                  <ul class="burger-nav-list">
-                    <li class="burger-link"><a class="link" href="#preview">How It Works</a></li>
-                    <li class="burger-link"><a class="link" href="#steps">Plan Your Trip</a></li>
-                    <li class="burger-link"><a class="link" href="#destinations">Destinations</a></li>
-                    <li class="burger-link"><a class="link" href="#stories">Travel Stories</a></li>
-                    <li class="burger-link"><a class="link" href="#">Account</a></li>
-                    <li class="burger-link"><a class="link" href="#footer">Social Media</a></li>
-                  </ul>
-                </nav>
-              </div>
+  <header class="header"><div class="header-background-color">
+      <div class="container-content">
+        <div class="header-container-content container-content-mobile">
+          <div class="logo">
+            <img src="assets/svg/logo.svg" alt="logo">
+            <p class="logo-text">Travel Portal</p>
+            <div class="hamburger">
+              <span class="line"></span>
+              <span class="line"></span>
+              <span class="line"></span>
             </div>
           </div>
+          <nav class="nav">
+            <ul class="nav-list">
+              <li><a class="link" href="#preview">How It Works</a></li>
+              <li><a class="link" href="#steps">Plan Your Trip</a></li>
+              <li><a class="link" href="#destinations">Destinations</a></li>
+              <li><a class="link" href="#stories">Travel Stories</a></li>
+            </ul>
+          </nav>
+          <button class="button button-header">Login</button>
+          <div class="hamburger-screen-dimming"></div>
+          <div class="burger-menu">
+            <div class="hamburger-close">
+              <span class="line-burger"></span>
+              <span class="line-burger"></span>
+            </div>
+            <nav class="burger-nav">
+              <ul class="burger-nav-list">
+                <li class="burger-link"><a class="link" href="#preview">How It Works</a></li>
+                <li class="burger-link"><a class="link" href="#steps">Plan Your Trip</a></li>
+                <li class="burger-link"><a class="link" href="#destinations">Destinations</a></li>
+                <li class="burger-link"><a class="link" href="#stories">Travel Stories</a></li>
+                <li class="burger-link"><a class="link" href="#">Account</a></li>
+                <li class="burger-link"><a class="link" href="#footer">Social Media</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
+      </div>
+    </div>
   </header>
   <main class="main">
     <section class="preview" id="preview">
@@ -63,7 +62,7 @@
         <p class="preview-text">Receive personalized recommendations for countries, hotels, activities and more</p>
         <form class="preview-form">
           <input class="preview-input" type="text" value="What would you like to do?">
-          <button class="button button-preview-form">Start Planning</button>
+          <button class="button button-preview-form" type="reset">Start Planning</button>
         </form>
       </div>
     </section>
@@ -89,7 +88,7 @@
       </div>
     </section>
     <section class="destinations" id="destinations">
-      <h2 class="heading">POPULAR DESTINATIONS</h2>
+      <h2 class="heading heading-mobile">POPULAR DESTINATIONS</h2>
       <div class="destinations-slider">
         <picture>
           <source media="(min-width: 400px)" srcset="assets/img/slider1.jpg">
@@ -114,7 +113,7 @@
       </div>
       <form class="destinations-form">
         <input class="destinations-input" name="slider" type="radio">
-        <input class="destinations-input" name="slider" type="radio" checked>
+        <input class="destinations-input" name="slider" type="radio">
         <input class="destinations-input" name="slider" type="radio">
       </form>
       <button class="button destinations-button">Find More</button>
