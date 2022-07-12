@@ -260,8 +260,6 @@ h1 {
 }
 .destinations-slider {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   padding: 0px;
   gap: 60px;
   max-width: 2520px;
@@ -306,8 +304,8 @@ h1 {
   background: rgba(242, 120, 92, 0.5);
   border-radius: 50%;
 }
-.destinations-input:checked {
-  background: #F2785C; /*Изменяют цвет радио-кнопки при нажатии*/
+.destinations-input:nth-child(2) {
+  background: #F2785C;
 }
 .destinations-button {
   font-size: 24px;
@@ -443,6 +441,16 @@ h1 {
 }
 
 /*media to 391px*/
+@media (max-width: 1438px) {
+  .destinations-slider {
+    width: 173vw;
+    height: auto;
+  }
+  .destinations-image {
+    width: calc(60vw - 50px);
+    height: auto;
+  }
+}
 
 @media (max-width: 1002px) {
   .stories-image {
@@ -573,6 +581,14 @@ h1 {
   }
   .stories-text {
     font-size: 10px;
+  }
+}
+@media (max-width: 413px) {
+  .stories-heading {
+    font-size: 14px;
+  }
+  .stories-text {
+    font-size: 8.5px;
   }
 }
 
@@ -735,6 +751,7 @@ h1 {
   }
   .steps-icon {
     margin-bottom: 9px;
+    padding: 0;
     padding-top: 11px;
   }
   .rectangle {
@@ -775,27 +792,31 @@ h1 {
   /*section destinations*/
   
   .destinations {
-    padding-top: 21px;
+    align-items: flex-start;
+    padding-top: 32px;
     margin-bottom: 20px;
+  }
+  .heading-mobile{
+    margin: 0 auto;
   }
   .destinations-slider {
     gap: 20px;
     max-width: 1120px;
     height: 210px;
-    padding-top: 10px;
-    margin-right: -760px;
+    padding: 0 15px;
+    padding-top: 20px;
   }
   .destinations-image {
-    width: 360px;
+    width: calc(100vw - 30px);
     height: 210px;
     border-radius: 16px;
   }
   .destinations-caption {
     width: 1120px;
     gap: 321px;
-    margin-top: -212px;
-    margin-right: -790px;
+    margin-top: -202px;
     margin-bottom: 136px;
+    padding: 0 29px;
   }
   .destinations-caption-heading {
     height: 26px;
@@ -810,11 +831,17 @@ h1 {
     width: 36px;
     height: 8px;
     padding-top: 14px;
-    margin-bottom: 25px;
+    margin: 0 auto;
+    margin-bottom: 26px;
   }
   .destinations-input {
     width: 8px;
     height: 8px;
+  }.destinations-input:nth-child(2) {
+    background: rgba(242, 120, 92, 0.5);
+  }
+  .destinations-input:first-child {
+    background: #F2785C;
   }
   .destinations-button {
     font-size: 11px;
@@ -822,6 +849,7 @@ h1 {
     padding-left: 26px;
     width: 92px;
     height: 30px;
+    margin: 0 auto;
     background-image: url(../assets/svg/mobile-arrow.svg);
     background-position: 15% 45%;
   }
@@ -929,12 +957,6 @@ h1 {
   .destinations-arrow-right {
     right: 10px;
   }
-  .destinations-caption {
-    width: 1083px;
-  }
-  .destinations-slider {
-    margin-right: -764px;
-  }
 }
 
 @media (max-width: 370px) {
@@ -951,11 +973,9 @@ h1 {
     font-size: 10px;
   }
 
-  .destinations-image {
-    width: 332px;
-  }
+  
   .destinations-slider {
-    margin-right: -703px;
+    margin-right: -310px;
   }
 
   .stories-image {
@@ -963,15 +983,6 @@ h1 {
     height: 110px;
   }
   
-}
-
-@media (max-width: 334px) {
-  .destinations-image {
-    width: 311px;
-  }
-  .destinations-slider {
-    margin-right: -659px;
-  }
 }
 
 
