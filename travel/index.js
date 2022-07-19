@@ -42,14 +42,13 @@ console.log('Score: 85/85\nВёрстка соответствует макет�
   const buttonForm = document.querySelector('.button-popup-form');
   const email = document.querySelector('.popup-form-input-email');
   const password = document.querySelector('.popup-form-input-password');
-  const heading = document.querySelector('.heading-popup');
+  const heading = document.querySelector('.popup-heading');
   const register = document.querySelector('.register');
   const buttonFacebook = document.querySelector('.button-popup-facebook');
   const buttonGoogle = document.querySelector('.button-popup-google');
   const popupLineOr = document.querySelector('.popup-line-or');
   const forgotPassword = document.querySelector('.popup-forgot-your-password');
   
-
   /*pop up open-close*/
 
   button.addEventListener('click', () => {
@@ -81,8 +80,6 @@ console.log('Score: 85/85\nВёрстка соответствует макет�
     forgotPassword.style.display = 'none';
     popupSign.style.height = '436px';
   });
-
-  
 
 }());
 
