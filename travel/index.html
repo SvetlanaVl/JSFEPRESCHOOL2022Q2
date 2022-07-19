@@ -33,7 +33,7 @@
               <li><a class="link" href="#stories">Travel Stories</a></li>
             </ul>
           </nav>
-          <button class="button button-header">Login</button>
+          <button class="button button-header account">Login</button>
           <div class="hamburger-screen-dimming"></div>
           <div class="burger-menu">
             <div class="hamburger-close">
@@ -42,11 +42,11 @@
             </div>
             <nav class="burger-nav">
               <ul class="burger-nav-list">
-                <li class="burger-link"><a class="link" href="#preview">How It Works</a></li>
-                <li class="burger-link"><a class="link" href="#steps">Plan Your Trip</a></li>
-                <li class="burger-link"><a class="link" href="#destinations">Destinations</a></li>
+                <li class="burger-link"><a class="link a" href="#preview">How It Works</a></li>
+                <li class="burger-link"><a class="link a" href="#steps">Plan Your Trip</a></li>
+                <li class="burger-link"><a class="link a" href="#destinations">Destinations</a></li>
                 <li class="burger-link"><a class="link" href="#stories">Travel Stories</a></li>
-                <li class="burger-link"><a class="link" href="#">Account</a></li>
+                <li class="burger-link account"><a class="link" href="#">Account</a></li>
                 <li class="burger-link"><a class="link" href="#footer">Social Media</a></li>
               </ul>
             </nav>
@@ -58,7 +58,7 @@
   <main class="main">
     <section class="preview" id="preview">
       <div class="container-content">
-        <h1>Explore the beauty of the World</h1>
+        <h1 class="preview-heder">Explore the beauty of the World</h1>
         <p class="preview-text">Receive personalized recommendations for countries, hotels, activities and more</p>
         <form class="preview-form">
           <input class="preview-input" type="text" value="What would you like to do?">
@@ -192,47 +192,30 @@
     </div>
   </footer>
   
-<div class="pop-up">
-  <div class="popup-sing-in">
-    <div class="container-content-popup">
-      <h1 class="heading-popup">Log in to your account</h1>
-      <button class="button-popup">Sign In with Facebook</button>
+<div class="popup-screen-dimming"></div>
+<div class="popup-sign">
+    <div class="popup-container-content">
+      <h1 class="popup-heading">Log in to your account</h1>
+      <button class="button-popup button-popup-facebook">Sign In with Facebook</button>
       <button class="button-popup button-popup-google">Sign In with Google</button>
       <div class="popup-line-or">
-        <hr class="line-popup">
+        <hr class="popup-line">
         <p class="line-text">or</p>
-        <hr class="line-popup">
+        <hr class="popup-line">
       </div>
       <form class="popup-form">
         <label class="popup-form-label" for="email">E-mail</label>
-        <input class="popup-form-input" type="email" id="email">
+        <input class="popup-form-input popup-form-input-email" type="email" id="email">
         <br>
         <label class="popup-form-label" for="pin">Password</label>
-        <input class="popup-form-input" type="password" id="pin">
+        <input class="popup-form-input popup-form-input-password" type="password" id="pin">
         <br>
         <button class="button-popup button-popup-form">Sign In</button>
       </form>
       <p class="popup-forgot-your-password"><a href="#" class="popup-link">Forgot Your Password?</a></p>
       <hr class="popup-line-second">
-      <p class="register">Don’t have an account? <a href="#" class="popup-link">Register</a></p>
+      <p class="register">Don’t have an account? <a href="#" class="popup-link popup-link-register">Register</a></p>
     </div>
-  </div>
-  <div class="pop-up popup-sign-up">
-    <div class="container-content-popup">
-      <h1 class="heading-popup">Create account</h1>
-      <form class="popup-form">
-        <label class="popup-form-label" for="email">E-mail</label>
-        <input class="popup-form-input" type="email" id="email">
-        <br>
-        <label class="popup-form-label" for="pin">Password</label>
-        <input class="popup-form-input" type="password" id="pin">
-        <br>
-        <button class="button-popup button-popup-form">Sign Up</button>
-      </form>
-      <hr class="popup-line-second">
-      <p class="register">Already have an account? <a href="#" class="popup-link">Log in</a></p>
-    </div>
-  </div>
 </div>
 
   <script src="index.js"></script>
