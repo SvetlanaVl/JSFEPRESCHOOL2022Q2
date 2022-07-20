@@ -6,10 +6,9 @@ console.log('Score: 85/85\nВёрстка соответствует макет�
   const burgerItem = document.querySelector('.hamburger');
   const menu = document.querySelector('.burger-menu');
   const menuCloseItem = document.querySelector('.hamburger-close');
-  const menuLinks = document.querySelectorAll('.link');
   const screenDimming = document.querySelector('.hamburger-screen-dimming');
   const burgerLinks = document.querySelectorAll('.burger-link');
-
+  
   burgerItem.addEventListener('click', () => {
     menu.classList.add('burger-menu-active');
     screenDimming.classList.add('hamburger-screen-dimming-active');
@@ -35,7 +34,8 @@ console.log('Score: 85/85\nВёрстка соответствует макет�
 /*pop up*/
 
 (function () {
-  const button = document.querySelector('.account');
+  const buttonMobile = document.querySelector('.account');
+  const button = document.querySelector('.button-header');
   const popupDimming = document.querySelector('.popup-screen-dimming');
   const popupSign = document.querySelector('.popup-sign');
   const buttonRegister = document.querySelector('.popup-link-register');
@@ -48,9 +48,17 @@ console.log('Score: 85/85\nВёрстка соответствует макет�
   const buttonGoogle = document.querySelector('.button-popup-google');
   const popupLineOr = document.querySelector('.popup-line-or');
   const forgotPassword = document.querySelector('.popup-forgot-your-password');
+  const registerLogin = document.querySelector('.register-login');
+  const buttonLogin = document.querySelector('.popup-link-log');
+  const popupHeight = document.querySelector('.popup-heading');
   
   /*pop up open-close*/
 
+  buttonMobile.addEventListener('click', () => {
+    popupDimming.classList.add('popup-screen-dimming-active');
+    popupSign.classList.add('popup-sign-active');
+    document.body.style.overflow = 'hidden';
+  });
   button.addEventListener('click', () => {
     popupDimming.classList.add('popup-screen-dimming-active');
     popupSign.classList.add('popup-sign-active');
@@ -71,14 +79,31 @@ console.log('Score: 85/85\nВёрстка соответствует макет�
   /*sign up*/
 
   buttonRegister.addEventListener('click', () => {
+    buttonFacebook.classList.add('hidden');
+    buttonGoogle.classList.add('hidden');
+    popupLineOr.classList.add('hidden');
+    forgotPassword.classList.add('hidden');
+    popupSign.classList.add('popup-height');
+    register.classList.add('hidden');
+    registerLogin.classList.remove('hidden');
+  });
+  buttonLogin.addEventListener('click', () => {
+    buttonFacebook.classList.remove('hidden');
+    buttonGoogle.classList.remove('hidden');
+    popupLineOr.classList.remove('hidden');
+    forgotPassword.classList.remove('hidden');
+    popupSign.classList.remove('popup-height');
+    register.classList.remove('hidden');
+    registerLogin.classList.add('hidden');
+  });
+
+  buttonRegister.addEventListener('click', () => {
     buttonForm.innerHTML = 'Sign Up';
     heading.innerHTML = 'Create account';
-    register.innerHTML = 'Already have an account? <a href="#" class="popup-link popup-link-login">Log in</a>';
-    buttonFacebook.style.display = 'none';
-    buttonGoogle.style.display = 'none';
-    popupLineOr.style.display = 'none';
-    forgotPassword.style.display = 'none';
-    popupSign.style.height = '436px';
+  });
+  buttonLogin.addEventListener('click', () => {
+    buttonForm.innerHTML = 'Sign In';
+    heading.innerHTML = 'Log in to your account';
   });
 
 }());
