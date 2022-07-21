@@ -332,6 +332,9 @@ html {
 .destinations-input:nth-child(2) {
   background: #F2785C;
 }
+.destinations-form-mobile {
+  display: none;
+}
 .destinations-button {
   font-size: 24px;
   line-height: 32px;
@@ -829,7 +832,6 @@ html {
   /*section destinations*/
   
   .destinations {
-    align-items: flex-start;
     padding-top: 32px;
     margin-bottom: 20px;
   }
@@ -838,9 +840,9 @@ html {
   }
   .destinations-slider {
     gap: 25px;
-    max-width: 1120px;
+    max-width: 1140px;
     height: 210px;
-    padding: 0 15px;
+    padding: 0 5px;
     padding-top: 20px;
     margin-bottom: 30px;
   }
@@ -849,12 +851,27 @@ html {
     height: 210px;
     border-radius: 16px;
   }
+  .slider-position-mobile-hidden {
+    display: none;
+  }
   .destinations-caption-heading {
     height: 26px;
     font-size: 20px;
     line-height: 26px;
     margin-left: -69vw;
     margin-top: -206px;
+  }
+  .slider-position {
+    transform: translateX(107%);
+  }
+  .slider-position-japan {
+    transform: translateX(0%);
+  }
+  .slider-position-usa {
+    transform: translateX(-107%);
+  }
+  .destinations-form-mobile {
+    display: flex;
   }
   .destinations-form {
     gap: 6px;
@@ -875,6 +892,9 @@ html {
   }
   .destinations-input:first-child {
     background: #F2785C;
+  }
+  .destinations-form-desktop {
+    display: none;
   }
   .destinations-button {
     font-size: 11px;

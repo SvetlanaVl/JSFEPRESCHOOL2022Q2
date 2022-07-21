@@ -121,8 +121,12 @@ console.log('Score: 85/85\nВёрстка соответствует макет�
   const inputJapan = document.querySelector('.destinations-input-japan');
   const inputSpain = document.querySelector('.destinations-input-spain');
   const inputUsa = document.querySelector('.destinations-input-usa');
+  const inputJapanMobile = document.querySelector('.destinations-input-japan-mobile');
+  const inputSpainMobile = document.querySelector('.destinations-input-spain-mobile');
+  const inputUsaMobile = document.querySelector('.destinations-input-usa-mobile');
   
-  
+  /*click image*/
+
   imageUsa.addEventListener('click', () => {
     for (let i = 0; i < images.length; i += 1) {
       images[i].classList.add('destinations-slider-position');
@@ -153,6 +157,8 @@ console.log('Score: 85/85\nВёрстка соответствует макет�
     inputSpain.style.background = 'rgba(242, 120, 92, 0.5)';
   });
 
+  /*click input*/
+
   inputUsa.addEventListener('click', () => {
     for (let i = 0; i < images.length; i += 1) {
       images[i].classList.add('destinations-slider-position');
@@ -182,6 +188,40 @@ console.log('Score: 85/85\nВёрстка соответствует макет�
     inputJapan.style.background = '#F2785C';
     inputSpain.style.background = 'rgba(242, 120, 92, 0.5)';
   });
+
+  /*click input mobile*/
+
+  inputJapanMobile.addEventListener('click', () => {
+    for (let i = 0; i < images.length; i += 1) {
+      images[i].classList.add('slider-position-japan');
+      images[i].classList.remove('slider-position-usa');
+    }
+    inputUsaMobile.style.background = 'rgba(242, 120, 92, 0.5)';
+    inputJapanMobile.style.background = '#F2785C';
+    inputSpainMobile.style.background = 'rgba(242, 120, 92, 0.5)';
+  });
+
+  inputUsaMobile.addEventListener('click', () => {
+    for (let i = 0; i < images.length; i += 1) {
+      images[i].classList.add('slider-position-usa');
+      images[i].classList.remove('slider-position-japan');
+    }
+    inputUsaMobile.style.background = '#F2785C';
+    inputJapanMobile.style.background = 'rgba(242, 120, 92, 0.5)';
+    inputSpainMobile.style.background = 'rgba(242, 120, 92, 0.5)';
+  });
+
+  inputSpainMobile.addEventListener('click', () => {
+    for (let i = 0; i < images.length; i += 1) {
+      images[i].classList.remove('slider-position-usa');
+      images[i].classList.remove('slider-position-japan');
+    }
+    inputUsaMobile.style.background = 'rgba(242, 120, 92, 0.5)';
+    inputJapanMobile.style.background = 'rgba(242, 120, 92, 0.5)';
+    inputSpainMobile.style.background = '#F2785C';
+  });
+
+  
 
 
 }());
