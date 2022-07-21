@@ -108,5 +108,76 @@ console.log('Score: 85/85\nВёрстка соответствует макет�
 
 }());
 
+/*destinations slider*/
 
+(function () {
+  const images = document.querySelectorAll('.slider-position');
+  const imageUsa = document.querySelector('.slider-position4');
+  const imageSpain = document.querySelector('.slider-position2');
+  const imageJapan = document.querySelector('.slider-position3');
+  const inputJapan = document.querySelector('.destinations-input-japan');
+  const inputSpain = document.querySelector('.destinations-input-spain');
+  const inputUsa = document.querySelector('.destinations-input-usa');
+  
+  
+  imageUsa.addEventListener('click', () => {
+    for (let i = 0; i < images.length; i += 1) {
+      images[i].classList.add('destinations-slider-position');
+      images[i].classList.remove('destinations-slider-position-right');
+    }
+    inputUsa.style.background = '#F2785C';
+    inputJapan.style.background = 'rgba(242, 120, 92, 0.5)';
+    inputSpain.style.background = 'rgba(242, 120, 92, 0.5)';
+  });
+
+  imageSpain.addEventListener('click', () => {
+    for (let i = 0; i < images.length; i += 1) {
+      images[i].classList.add('destinations-slider-position-right');
+      images[i].classList.remove('destinations-slider-position');
+    }
+    inputUsa.style.background = 'rgba(242, 120, 92, 0.5)';
+    inputJapan.style.background = 'rgba(242, 120, 92, 0.5)';
+    inputSpain.style.background = '#F2785C';
+  });
+
+  imageJapan.addEventListener('click', () => {
+    for (let i = 0; i < images.length; i += 1) {
+      images[i].classList.remove('destinations-slider-position-right');
+      images[i].classList.remove('destinations-slider-position');
+    }
+    inputUsa.style.background = 'rgba(242, 120, 92, 0.5)';
+    inputJapan.style.background = '#F2785C';
+    inputSpain.style.background = 'rgba(242, 120, 92, 0.5)';
+  });
+
+  inputUsa.addEventListener('click', () => {
+    for (let i = 0; i < images.length; i += 1) {
+      images[i].classList.add('destinations-slider-position');
+      images[i].classList.remove('destinations-slider-position-right');
+    }
+    inputUsa.style.background = '#F2785C';
+    inputJapan.style.background = 'rgba(242, 120, 92, 0.5)';
+    inputSpain.style.background = 'rgba(242, 120, 92, 0.5)';
+  });
+
+  inputSpain.addEventListener('click', () => {
+    for (let i = 0; i < images.length; i += 1) {
+      images[i].classList.add('destinations-slider-position-right');
+      images[i].classList.remove('destinations-slider-position');
+    }
+    inputUsa.style.background = 'rgba(242, 120, 92, 0.5)';
+    inputJapan.style.background = 'rgba(242, 120, 92, 0.5)';
+    inputSpain.style.background = '#F2785C';
+  });
+
+  inputJapan.addEventListener('click', () => {
+    for (let i = 0; i < images.length; i += 1) {
+      images[i].classList.remove('destinations-slider-position-right');
+      images[i].classList.remove('destinations-slider-position');
+    }
+    inputUsa.style.background = 'rgba(242, 120, 92, 0.5)';
+    inputJapan.style.background = '#F2785C';
+    inputSpain.style.background = 'rgba(242, 120, 92, 0.5)';
+  });
+}());
 
