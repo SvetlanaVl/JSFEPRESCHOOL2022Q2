@@ -475,6 +475,9 @@ html {
     width: calc(60vw - 50px);
     height: auto;
   }
+  .destinations-caption-heading {
+    margin-left: -44vw;
+  }
 }
 
 @media (max-width: 1002px) {
@@ -489,6 +492,10 @@ html {
   .stories-text {
     font-size: 18px;
     line-height: 20px;
+  }
+  .destinations-caption-heading {
+    margin-left: -40vw;
+    font-size: 30px;
   }
 }
 
@@ -512,10 +519,6 @@ html {
 
   .steps-icon {
     margin-left: 0px;
-  }
-
-  .destinations-caption-heading {
-    font-size: 30px;
   }
 }
 
@@ -546,11 +549,10 @@ html {
     padding: 0;
   }
 
-  .destinations-caption {
-    gap: 54vw;
-  }
   .destinations-caption-heading {
     font-size: 26px;
+    margin-left: -38vw;
+    margin-top: -69px;
   }
 
   .stories-image {
@@ -595,12 +597,10 @@ html {
     margin-left: 3px;
   }
 
-  .destinations-caption {
-    gap: 53vw;
-    margin-top: -87px;
-  }
   .destinations-caption-heading {
     font-size: 24px;
+    margin-left: -37vw;
+    margin-top: -59px;
   }
 
   .stories-image {
@@ -614,11 +614,9 @@ html {
     font-size: 60px;
   }
   
-  .destinations-caption {
-    gap: 52vw;
-  }
   .destinations-caption-heading {
-    font-size: 23px;
+    font-size: 20px;
+    margin-left: -35vw;
   }
 
 }
@@ -631,13 +629,6 @@ html {
 
   .steps-text {
     font-size: 18px;
-  }
-
-  .destinations-caption {
-    margin-top: -71px;
-  }
-  .destinations-caption-heading {
-    font-size: 20px;
   }
 
   .stories-image {
@@ -653,7 +644,7 @@ html {
 }
 @media (max-width: 413px) {
   .destinations-caption-heading {
-    font-size: 18px;
+    font-size: 16px;
   }
   
   .stories-heading {
@@ -846,31 +837,24 @@ html {
     margin: 0 auto;
   }
   .destinations-slider {
-    gap: 20px;
+    gap: 25px;
     max-width: 1120px;
     height: 210px;
     padding: 0 15px;
     padding-top: 20px;
+    margin-bottom: 30px;
   }
   .destinations-image {
     width: calc(100vw - 30px);
     height: 210px;
     border-radius: 16px;
   }
-  .destinations-caption {
-    width: 1120px;
-    gap: 321px;
-    margin-top: -202px;
-    margin-bottom: 136px;
-    padding: 0 29px;
-  }
   .destinations-caption-heading {
     height: 26px;
     font-size: 20px;
     line-height: 26px;
-  }
-  .destinations-caption-heading:last-child {
-    margin-left: -9px;
+    margin-left: -69vw;
+    margin-top: -206px;
   }
   .destinations-form {
     gap: 6px;
@@ -878,7 +862,10 @@ html {
     height: 8px;
     padding-top: 14px;
     margin: 0 auto;
-    margin-bottom: 26px;
+    position: absolute;
+    z-index: 2;
+    top: 114.5%;
+    left: 45%;
   }
   .destinations-input {
     width: 8px;

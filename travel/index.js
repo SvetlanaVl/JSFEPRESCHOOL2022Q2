@@ -12,20 +12,24 @@ console.log('Score: 85/85\nВёрстка соответствует макет�
   burgerItem.addEventListener('click', () => {
     menu.classList.add('burger-menu-active');
     screenDimming.classList.add('hamburger-screen-dimming-active');
+    document.body.style.overflow = 'hidden';
   });
   menuCloseItem.addEventListener('click', () => {
     menu.classList.remove('burger-menu-active');
     screenDimming.classList.remove('hamburger-screen-dimming-active');
+    document.body.style.overflow = '';
   });
   screenDimming.addEventListener('click', () => {
     menu.classList.remove('burger-menu-active');
     screenDimming.classList.remove('hamburger-screen-dimming-active');
+    document.body.style.overflow = '';
   });
 
   for (let i = 0; i < burgerLinks.length; i += 1) {
     burgerLinks[i].addEventListener('click', () => {
       menu.classList.remove('burger-menu-active');
       screenDimming.classList.remove('hamburger-screen-dimming-active');
+      document.body.style.overflow = '';
     });
   }
 
@@ -50,7 +54,6 @@ console.log('Score: 85/85\nВёрстка соответствует макет�
   const forgotPassword = document.querySelector('.popup-forgot-your-password');
   const registerLogin = document.querySelector('.register-login');
   const buttonLogin = document.querySelector('.popup-link-log');
-  const popupHeight = document.querySelector('.popup-heading');
   
   /*pop up open-close*/
 
@@ -179,5 +182,7 @@ console.log('Score: 85/85\nВёрстка соответствует макет�
     inputJapan.style.background = '#F2785C';
     inputSpain.style.background = 'rgba(242, 120, 92, 0.5)';
   });
+
+
 }());
 
