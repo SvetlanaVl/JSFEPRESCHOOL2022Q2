@@ -286,6 +286,44 @@ html {
   padding-top: 5px;
   margin-bottom: 28px;
 }
+.destinations-arrow-mobile {
+  display: none;
+  width: 30px;
+  height: 30px;
+  margin-top: 9px;
+  margin-left: 8px;
+  position: absolute;
+  z-index: 2;
+}
+.destinations-arrow-left-mobile {
+  top: 97.5%;
+  left: 3%;
+}
+.destinations-arrow-right-mobile {
+  top: 94.5%;
+  right: 5%;
+  transform: translateY(13px) rotate(180deg);
+}
+.destinations-arrow-mobile-line {
+  width: 17px;
+  height: 3px;
+  display: block;
+  margin: 4px auto;
+  border-radius: 3px;
+}
+.destinations-arrow-mobile-line:first-child {
+  transform: translateY(13px) rotate(45deg);
+}
+.destinations-arrow-mobile-line:last-child {
+  transform: translateY(-13px) rotate(-45deg);
+  margin-top: 11px;
+}
+.destinations-arrow-mobile-line-not_active {
+  background-color: rgba(242, 120, 92, 0.5);
+}
+.destinations-arrow-mobile-line-active {
+  background-color: #F2785C;
+}
 .destinations-image {
   max-width: 800px;
   max-height: 800px;
@@ -661,7 +699,7 @@ html {
 
 /*mobile*/
 
-@media screen and (max-width: 390px) {
+@media (max-width: 390px) {
 
   /*header*/
 
@@ -846,6 +884,9 @@ html {
     padding-top: 20px;
     margin-bottom: 30px;
   }
+  .destinations-arrow-mobile {
+    display: block;
+  }
   .destinations-image {
     width: calc(100vw - 30px);
     height: 210px;
@@ -861,7 +902,7 @@ html {
     margin-left: -69vw;
     margin-top: -206px;
   }
-  .slider-position {
+  .slider-position-mobile {
     transform: translateX(107%);
   }
   .slider-position-japan {
@@ -905,26 +946,6 @@ html {
     margin: 0 auto;
     background-image: url(../assets/svg/mobile-arrow.svg);
     background-position: 15% 45%;
-  }
-  .destinations-arrow-left,
-  .destinations-arrow-right {
-    display: inherit;
-  }
-  .destinations-arrow-left {
-    background: url(../assets/svg/arrow-up-bold-left.svg);
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    left: 20px;
-    top: 574px;
-  }
-  .destinations-arrow-right {
-    background: url(../assets/svg/arrow-up-bold-right.svg);
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    right: 20px;
-    top: 573px;
   }
   
 
@@ -1024,11 +1045,6 @@ html {
     width: 82px;
     margin-left: 11px;
     font-size: 10px;
-  }
-
-  
-  .destinations-slider {
-    margin-right: -310px;
   }
 
   .stories-image {

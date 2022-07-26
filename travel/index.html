@@ -90,31 +90,39 @@
     <section class="destinations" id="destinations">
       <h2 class="heading heading-mobile">POPULAR DESTINATIONS</h2>
       <div class="destinations-slider">
-        <picture class="slider-position slider-position1 slider-position-mobile-hidden">
+        <div class="destinations-arrow-mobile destinations-arrow-left-mobile">
+          <span class="destinations-arrow-mobile-line destinations-arrow-mobile-line-not_active"></span>
+          <span class="destinations-arrow-mobile-line destinations-arrow-mobile-line-not_active"></span>
+        </div>
+        <div class="destinations-arrow-mobile destinations-arrow-right-mobile">
+          <span class="destinations-arrow-mobile-line destinations-arrow-mobile-line-active"></span>
+          <span class="destinations-arrow-mobile-line destinations-arrow-mobile-line-active"></span>
+        </div>
+        <picture class="slider-position slider-position1 slider-position-mobile slider-position-mobile-hidden">
           <source media="(min-width: 400px)" srcset="assets/img/slider3.jpg">
           <source media="(max-width: 390px)" srcset="assets/img/mobile-slider3.jpg">
           <img class="destinations-image" src="assets/img/slider3.jpg" alt="USA">
           <p class="heading destinations-caption-heading">USA</p>
         </picture>
-        <picture class="slider-position slider-position2">
+        <picture class="slider-position slider-position2 slider-position-mobile">
           <source media="(min-width: 400px)" srcset="assets/img/slider1.jpg">
           <source media="(max-width: 390px)" srcset="assets/img/mobile-slider1.jpg">
           <img class="destinations-image" src="assets/img/slider1.jpg" alt="Spain">
           <p class="heading destinations-caption-heading">SPAIN</p>
         </picture>
-        <picture class="slider-position slider-position3">
+        <picture class="slider-position slider-position3 slider-position-mobile">
           <source media="(min-width: 400px)" srcset="assets/img/slider2.jpg">
           <source media="(max-width: 390px)" srcset="assets/img/mobile-slider2.jpg">
           <img class="destinations-image" src="assets/img/slider2.jpg" alt="Japan">
           <p class="heading destinations-caption-heading">JAPAN</p>
         </picture>
-        <picture class="slider-position slider-position4">
+        <picture class="slider-position slider-position4 slider-position-mobile">
           <source media="(min-width: 400px)" srcset="assets/img/slider3.jpg">
           <source media="(max-width: 390px)" srcset="assets/img/mobile-slider3.jpg">
           <img class="destinations-image" src="assets/img/slider3.jpg" alt="USA">
           <p class="heading destinations-caption-heading">USA</p>
         </picture>
-        <picture class="slider-position slider-position5 slider-position-mobile-hidden">
+        <picture class="slider-position slider-position5 slider-position-mobile slider-position-mobile-hidden">
           <source media="(min-width: 400px)" srcset="assets/img/slider1.jpg">
           <source media="(max-width: 390px)" srcset="assets/img/mobile-slider1.jpg">
           <img class="destinations-image" src="assets/img/slider1.jpg" alt="Spain">
@@ -132,8 +140,7 @@
         <input class="destinations-input destinations-input-usa-mobile" name="slider" type="radio">
       </form>
       <button class="button destinations-button">Find More</button>
-      <div class="destinations-arrow-left"></div>
-      <div class="destinations-arrow-right"></div>
+      
     </section>
     <section class="stories" id="stories">
       <h2 class="heading">TRAVEL STORIES</h2>
