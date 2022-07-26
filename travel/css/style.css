@@ -288,20 +288,23 @@ html {
 }
 .destinations-arrow-mobile {
   display: none;
-  width: 30px;
-  height: 30px;
+  width: 100%;
+  padding: 0 13px;
   margin-top: 9px;
   margin-left: 8px;
-  position: absolute;
+  position: relative;
+  top: -137px;
   z-index: 2;
 }
 .destinations-arrow-left-mobile {
-  top: 97.5%;
-  left: 3%;
+  width: 30px;
+  height: 30px;
 }
 .destinations-arrow-right-mobile {
-  top: 94.5%;
-  right: 5%;
+  width: 30px;
+  height: 30px;
+  padding-left: 16px;
+  margin-top: -17px;
   transform: translateY(13px) rotate(180deg);
 }
 .destinations-arrow-mobile-line {
@@ -328,13 +331,11 @@ html {
   max-width: 800px;
   max-height: 800px;
   border-radius: 16px;
-  
 }
 .slider-position {
   transform: translateX(0);
   transition: all 0.5s linear 0.2s;
 }
-
 .destinations-slider-position {
   transform: translateX(-107%);
 }
@@ -382,10 +383,6 @@ html {
   background-image: url(../assets/svg/arrow.svg);
   background-repeat: no-repeat;
   background-position: 18% 45%;
-}
-.destinations-arrow-left,
-.destinations-arrow-right {
-  display: none;
 }
 
 /*Section stories*/
@@ -507,7 +504,7 @@ html {
 }
 
 /*media to 391px*/
-@media (max-width: 1438px) {
+@media screen and (max-width: 1438px) {
   .destinations-slider {
     width: 295vw;
     height: auto;
@@ -521,7 +518,7 @@ html {
   }
 }
 
-@media (max-width: 1002px) {
+@media screen and (max-width: 1002px) {
   .stories-image {
     max-width: 350px;
     height: 200px;
@@ -540,7 +537,7 @@ html {
   }
 }
 
-@media (max-width: 969px) {
+@media screen and (max-width: 969px) {
   .nav {
     margin-left: 5px;
   }
@@ -563,7 +560,7 @@ html {
   }
 }
 
-@media (max-width: 810px) {
+@media screen and (max-width: 810px) {
   .logo {
     gap: 2px;
   }
@@ -615,7 +612,7 @@ html {
 
 }
 
-@media (max-width: 621px) {
+@media screen and (max-width: 621px) {
   .footer-text {
     font-size: 12px;
     line-height: 21px;
@@ -650,7 +647,7 @@ html {
 
 }
 
-@media (max-width: 545px) {
+@media screen and (max-width: 545px) {
   .preview-header {
     font-size: 60px;
   }
@@ -663,7 +660,7 @@ html {
 }
 
 
-@media (max-width: 469px) {
+@media screen and (max-width: 469px) {
   .nav-list{
     max-width: 240px;
   }
@@ -683,7 +680,7 @@ html {
     font-size: 10px;
   }
 }
-@media (max-width: 413px) {
+@media screen and (max-width: 413px) {
   .destinations-caption-heading {
     font-size: 16px;
   }
@@ -699,7 +696,7 @@ html {
 
 /*mobile*/
 
-@media (max-width: 390px) {
+@media screen and (max-width: 390px) {
 
   /*header*/
 
@@ -885,7 +882,8 @@ html {
     margin-bottom: 30px;
   }
   .destinations-arrow-mobile {
-    display: block;
+    display: flex;
+    justify-content: space-between;
   }
   .destinations-image {
     width: calc(100vw - 30px);
@@ -913,6 +911,7 @@ html {
   }
   .destinations-form-mobile {
     display: flex;
+
   }
   .destinations-form {
     gap: 6px;
@@ -920,10 +919,9 @@ html {
     height: 8px;
     padding-top: 14px;
     margin: 0 auto;
-    position: absolute;
+    position: relative;
     z-index: 2;
-    top: 114.5%;
-    left: 45%;
+    top: -79px;
   }
   .destinations-input {
     width: 8px;
@@ -944,6 +942,7 @@ html {
     width: 92px;
     height: 30px;
     margin: 0 auto;
+    margin-top: -53px;
     background-image: url(../assets/svg/mobile-arrow.svg);
     background-position: 15% 45%;
   }
@@ -1024,16 +1023,8 @@ html {
 
 /*max-width = 390px*/
 
-@media (max-width: 380px) {
-  .destinations-arrow-left {
-    left: 10px;
-  }
-  .destinations-arrow-right {
-    right: 10px;
-  }
-}
 
-@media (max-width: 370px) {
+@media screen and (max-width: 370px) {
   .preview-form {
     width: 310px;
   }
@@ -1060,7 +1051,7 @@ html {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
-  position: absolute;
+  position: fixed;
   z-index: 4;
   top: 0;
   left: 0;
@@ -1070,7 +1061,6 @@ html {
 .popup-screen-dimming-active {
   transform: translateX(0);
 }
-
 .popup-container {
   display: flex;
   justify-content: center;
@@ -1115,6 +1105,9 @@ html {
   margin: 0 auto;
   padding-top: 25px;
   margin-bottom: 30px;
+}
+.popup-heading-font_size {
+  font-size: 28px;
 }
 .button-popup {
   width: 100%;
