@@ -46,7 +46,7 @@
                 <li class="burger-link"><a class="link" href="#steps">Plan Your Trip</a></li>
                 <li class="burger-link"><a class="link" href="#destinations">Destinations</a></li>
                 <li class="burger-link"><a class="link" href="#stories">Travel Stories</a></li>
-                <li class="burger-link"><a class="link" href="#">Account</a></li>
+                <li class="burger-link"><a class="link account" href="#">Account</a></li>
                 <li class="burger-link"><a class="link" href="#footer">Social Media</a></li>
               </ul>
             </nav>
@@ -58,7 +58,7 @@
   <main class="main">
     <section class="preview" id="preview">
       <div class="container-content">
-        <h1>Explore the beauty of the World</h1>
+        <h1 class="preview-header">Explore the beauty of the World</h1>
         <p class="preview-text">Receive personalized recommendations for countries, hotels, activities and more</p>
         <form class="preview-form">
           <input class="preview-input" type="text" value="What would you like to do?">
@@ -90,35 +90,57 @@
     <section class="destinations" id="destinations">
       <h2 class="heading heading-mobile">POPULAR DESTINATIONS</h2>
       <div class="destinations-slider">
-        <picture>
-          <source media="(min-width: 400px)" srcset="assets/img/slider1.jpg">
-          <source media="(max-width: 390px)" srcset="assets/img/mobile-slider1.jpg">
-          <img class="destinations-image" src="assets/img/slider1.jpg" alt="Spain">
-        </picture>
-        <picture>
-          <source media="(min-width: 400px)" srcset="assets/img/slider2.jpg">
-          <source media="(max-width: 390px)" srcset="assets/img/mobile-slider2.jpg">
-          <img class="destinations-image" src="assets/img/slider2.jpg" alt="Japan">
-        </picture>
-        <picture>
+        <div class="destinations-arrow-mobile destinations-arrow-left-mobile">
+          <span class="destinations-arrow-mobile-line destinations-arrow-mobile-line-not_active"></span>
+          <span class="destinations-arrow-mobile-line destinations-arrow-mobile-line-not_active"></span>
+        </div>
+        <div class="destinations-arrow-mobile destinations-arrow-right-mobile">
+          <span class="destinations-arrow-mobile-line destinations-arrow-mobile-line-active"></span>
+          <span class="destinations-arrow-mobile-line destinations-arrow-mobile-line-active"></span>
+        </div>
+        <picture class="slider-position slider-position1 slider-position-mobile slider-position-mobile-hidden">
           <source media="(min-width: 400px)" srcset="assets/img/slider3.jpg">
           <source media="(max-width: 390px)" srcset="assets/img/mobile-slider3.jpg">
           <img class="destinations-image" src="assets/img/slider3.jpg" alt="USA">
+          <p class="heading destinations-caption-heading">USA</p>
+        </picture>
+        <picture class="slider-position slider-position2 slider-position-mobile">
+          <source media="(min-width: 400px)" srcset="assets/img/slider1.jpg">
+          <source media="(max-width: 390px)" srcset="assets/img/mobile-slider1.jpg">
+          <img class="destinations-image" src="assets/img/slider1.jpg" alt="Spain">
+          <p class="heading destinations-caption-heading">SPAIN</p>
+        </picture>
+        <picture class="slider-position slider-position3 slider-position-mobile">
+          <source media="(min-width: 400px)" srcset="assets/img/slider2.jpg">
+          <source media="(max-width: 390px)" srcset="assets/img/mobile-slider2.jpg">
+          <img class="destinations-image" src="assets/img/slider2.jpg" alt="Japan">
+          <p class="heading destinations-caption-heading">JAPAN</p>
+        </picture>
+        <picture class="slider-position slider-position4 slider-position-mobile">
+          <source media="(min-width: 400px)" srcset="assets/img/slider3.jpg">
+          <source media="(max-width: 390px)" srcset="assets/img/mobile-slider3.jpg">
+          <img class="destinations-image" src="assets/img/slider3.jpg" alt="USA">
+          <p class="heading destinations-caption-heading">USA</p>
+        </picture>
+        <picture class="slider-position slider-position5 slider-position-mobile slider-position-mobile-hidden">
+          <source media="(min-width: 400px)" srcset="assets/img/slider1.jpg">
+          <source media="(max-width: 390px)" srcset="assets/img/mobile-slider1.jpg">
+          <img class="destinations-image" src="assets/img/slider1.jpg" alt="Spain">
+          <p class="heading destinations-caption-heading">SPAIN</p>
         </picture>
       </div>
-      <div class="destinations-caption">
-        <p class="heading destinations-caption-heading">SPAIN</p>
-        <p class="heading destinations-caption-heading">JAPAN</p>
-        <p class="heading destinations-caption-heading">USA</p>
-      </div>
-      <form class="destinations-form">
-        <input class="destinations-input" name="slider" type="radio">
-        <input class="destinations-input" name="slider" type="radio">
-        <input class="destinations-input" name="slider" type="radio">
+      <form class="destinations-form destinations-form-desktop">
+        <input class="destinations-input destinations-input-spain" name="slider" type="radio">
+        <input class="destinations-input destinations-input-japan" name="slider" type="radio">
+        <input class="destinations-input destinations-input-usa" name="slider" type="radio">
+      </form>
+      <form class="destinations-form destinations-form-mobile">
+        <input class="destinations-input destinations-input-spain-mobile" name="slider" type="radio">
+        <input class="destinations-input destinations-input-japan-mobile" name="slider" type="radio">
+        <input class="destinations-input destinations-input-usa-mobile" name="slider" type="radio">
       </form>
       <button class="button destinations-button">Find More</button>
-      <div class="destinations-arrow-left"></div>
-      <div class="destinations-arrow-right"></div>
+      
     </section>
     <section class="stories" id="stories">
       <h2 class="heading">TRAVEL STORIES</h2>
@@ -191,6 +213,34 @@
       </div>
     </div>
   </footer>
+  
+<div class="popup-screen-dimming"></div>
+<div class="popup-sign">
+    <div class="popup-container-content">
+      <h1 class="popup-heading">Log in to your account</h1>
+      <button class="button-popup button-popup-facebook"><img src="./assets/svg/facebook.svg" alt="icon facebook"> Sign In with Facebook</button>
+      <button class="button-popup button-popup-google"><img src="./assets/svg/logo-google.svg" alt="icon google">Sign In with Google</button>
+      <div class="popup-line-or">
+        <hr class="popup-line">
+        <p class="line-text">or</p>
+        <hr class="popup-line">
+      </div>
+      <form class="popup-form">
+        <label class="popup-form-label" for="email">E-mail</label>
+        <input class="popup-form-input popup-form-input-email" type="email" id="email">
+        <br>
+        <label class="popup-form-label" for="pin">Password</label>
+        <input class="popup-form-input popup-form-input-password" type="password" id="pin">
+        <br>
+        <button class="button-popup button-popup-form">Sign In</button>
+      </form>
+      <p class="popup-forgot-your-password"><a href="#" class="popup-link">Forgot Your Password?</a></p>
+      <hr class="popup-line-second">
+      <p class="register">Don’t have an account? <a href="#" class="popup-link popup-link-register">Register</a></p>
+      <p class="register register-login hidden">Already have an account? <a href="#" class="popup-link popup-link-log">Log in</a></p>
+    </div>
+</div>
+
   <script src="index.js"></script>
 </body>
 </html>
