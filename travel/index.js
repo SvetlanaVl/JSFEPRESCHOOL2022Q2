@@ -122,6 +122,7 @@ console.log(
   const inputUsaMobile = document.querySelector(".destinations-input-usa-mobile");
   const arrowLeft = document.querySelector(".destinations-arrow-left-mobile");
   const arrowRight = document.querySelector(".destinations-arrow-right-mobile");
+  
   const arrowLineNotActives = document.querySelectorAll(".destinations-arrow-mobile-line-not_active");
   const arrowLineActives = document.querySelectorAll(".destinations-arrow-mobile-line-active");
 
