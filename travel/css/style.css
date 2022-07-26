@@ -13,8 +13,6 @@ html {
   padding: 0 15px;
 }
 
-
-
 /*Header*/
 
 .header {
@@ -34,6 +32,7 @@ html {
   align-items: center;
   justify-content: space-between;
   height: 90px;
+  overflow: hidden;
 }
 .logo {
   display: flex;
@@ -501,6 +500,183 @@ html {
   width: 300%;
   height: auto;
   margin-top: -5px;
+}
+
+/*Pop Up*/
+
+.popup-screen-dimming {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  transform: translateX(100%);
+  transition-delay: 0.7s;
+}
+.popup-screen-dimming-active {
+  transform: translateX(0);
+}
+.popup-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: absolute;
+  z-index: 4;
+  top: 138px;
+  left: 0;
+  transform: translateY(-150%);
+  transition: all 0.5s linear 0.2s;
+}
+.popup-sign {
+  max-width: 650px;
+  height: 660px;
+  margin: 0 auto;
+  background: linear-gradient(177.09deg, #FFFFFF 6.15%, #0D606F 202.69%);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  position: absolute;
+  z-index: 4;
+  top: 138px;
+  left: 1%;
+  right: 1%;
+  transform: translateY(-150%);
+  transition: all 0.5s linear 0.2s;
+}
+.popup-sign-active {
+  transform: translateY(0);
+}
+.popup-container-content {
+  max-width: 86%;
+  margin: 0 auto;
+  text-align: center;
+}
+.popup-heading {
+  font-family: 'Aleo', serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: #0D606F;
+  margin: 0 auto;
+  padding-top: 25px;
+  margin-bottom: 30px;
+}
+.button-popup {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  padding-left: 18px;
+  gap: 15px;
+  background-color: #1877F2;
+  box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+  border: none;
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: #FFFFFF;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.button-popup-google{
+  background-color: #FFFFFF;
+  color: #0D606F;
+  margin-bottom: 30px;
+}
+.popup-line-or {
+  display: flex;
+  margin-bottom: 10px;
+  padding-top: 2px;
+}
+.popup-line {
+  width: 48%;
+  border: 1px solid rgba(13, 96, 111, 0.5);
+}
+.line-text {
+  font-family:'Aleo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: rgba(13, 96, 111, 0.5);
+  margin: 0 10px;
+  margin-top: -2px;
+}
+.popup-form {
+  text-align: left;
+}
+.popup-form-label {
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #0D606F;
+  margin-bottom: 5px;
+}
+.popup-form-input {
+  width: 100%;
+  height: 54px;
+  background: #FFFFFF;
+  box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08), inset 0px 2px 3px rgba(13, 96, 111, 0.16);
+  border-radius: 10px;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+.button-popup-form {
+  padding-right: 19px;
+  gap: 10px;
+  height: 54px;
+  background-color: #0D606F;
+  background-image: none;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.popup-forgot-your-password {
+  margin: 0;
+  text-align: center;
+}
+.popup-link {
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  color: #0D606F;
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+  margin: 0 auto;
+}
+.popup-line-second {
+  margin-top: 24px;
+  margin-bottom: 21px;
+}
+.register {
+  font-family: 'Aleo';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  color: rgba(13, 96, 111, 0.5);
+  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+  margin: 0;
+  padding-bottom: 22px;
+}
+.hidden {
+  display: none;
+}
+.popup-height {
+  height: 436px;
 }
 
 /*media to 391px*/
@@ -1019,6 +1195,12 @@ html {
     padding-left: 5px;
     gap: 20px;
   }
+
+  /*pop up*/
+
+  .popup-heading {
+    font-size: 26px;
+  }
 }
 
 /*max-width = 390px*/
@@ -1043,185 +1225,5 @@ html {
     height: 110px;
   }
   
-}
-
-/*Pop Up*/
-
-.popup-screen-dimming {
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  position: fixed;
-  z-index: 4;
-  top: 0;
-  left: 0;
-  transform: translateX(100%);
-  transition-delay: 0.7s;
-}
-.popup-screen-dimming-active {
-  transform: translateX(0);
-}
-.popup-container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  position: absolute;
-  z-index: 4;
-  top: 138px;
-  left: 0;
-  transform: translateY(-150%);
-  transition: all 0.5s linear 0.2s;
-}
-.popup-sign {
-  max-width: 650px;
-  height: 660px;
-  margin: 0 auto;
-  background: linear-gradient(177.09deg, #FFFFFF 6.15%, #0D606F 202.69%);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 16px;
-  position: absolute;
-  z-index: 4;
-  top: 138px;
-  left: 1%;
-  right: 1%;
-  transform: translateY(-150%);
-  transition: all 0.5s linear 0.2s;
-}
-.popup-sign-active {
-  transform: translateY(0);
-}
-.popup-container-content {
-  max-width: 86%;
-  margin: 0 auto;
-  text-align: center;
-}
-.popup-heading {
-  font-family: 'Aleo', serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 38px;
-  color: #0D606F;
-  margin: 0 auto;
-  padding-top: 25px;
-  margin-bottom: 30px;
-}
-.popup-heading-font_size {
-  font-size: 28px;
-}
-.button-popup {
-  width: 100%;
-  height: 56px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  padding-left: 18px;
-  gap: 15px;
-  background-color: #1877F2;
-  box-shadow: 0px 0px 3px rgba(13, 96, 111, 0.08), 0px 2px 3px rgba(13, 96, 111, 0.16);
-  border-radius: 10px;
-  border: none;
-  font-family: 'Red Hat Text';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 26px;
-  color: #FFFFFF;
-  cursor: pointer;
-  margin-bottom: 20px;
-}
-.button-popup-google{
-  background-color: #FFFFFF;
-  color: #0D606F;
-  margin-bottom: 30px;
-}
-.popup-line-or {
-  display: flex;
-  margin-bottom: 10px;
-  padding-top: 2px;
-}
-.popup-line {
-  width: 48%;
-  border: 1px solid rgba(13, 96, 111, 0.5);
-}
-.line-text {
-  font-family:'Aleo';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 24px;
-  color: rgba(13, 96, 111, 0.5);
-  margin: 0 10px;
-  margin-top: -2px;
-}
-.popup-form {
-  text-align: left;
-}
-.popup-form-label {
-  font-family: 'Aleo';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: #0D606F;
-  margin-bottom: 5px;
-}
-.popup-form-input {
-  width: 100%;
-  height: 54px;
-  background: #FFFFFF;
-  box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08), inset 0px 2px 3px rgba(13, 96, 111, 0.16);
-  border-radius: 10px;
-  border: none;
-  margin-top: 5px;
-  margin-bottom: 20px;
-}
-.button-popup-form {
-  padding-right: 19px;
-  gap: 10px;
-  height: 54px;
-  background-color: #0D606F;
-  background-image: none;
-  margin-top: 5px;
-  margin-bottom: 10px;
-}
-.popup-forgot-your-password {
-  margin: 0;
-  text-align: center;
-}
-.popup-link {
-  font-family: 'Aleo';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 18px;
-  text-decoration-line: underline;
-  color: #0D606F;
-  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
-  margin: 0 auto;
-}
-.popup-line-second {
-  margin-top: 24px;
-  margin-bottom: 21px;
-}
-.register {
-  font-family: 'Aleo';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 18px;
-  text-align: center;
-  color: rgba(13, 96, 111, 0.5);
-  text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
-  margin: 0;
-  padding-bottom: 22px;
-}
-.hidden {
-  display: none;
-}
-.popup-height {
-  height: 436px;
 }
 
