@@ -9,9 +9,12 @@ const weatherIcon = document.querySelector('.weather-icon');
 const temperature = document.querySelector('.temperature');
 const weatherDescription = document.querySelector('.weather-description');
 const city = document.querySelector('.city');
+const changeQuote = document.querySelector('.change-quote');
+const quote = document.querySelector('.quote');
+const author = document.querySelector('.author');
 
 
-let randomNum;
+let bgNum;
 
 // clock and calendar
 
@@ -82,7 +85,7 @@ function setBg() {
   const date = new Date();
   const hours = date.getHours();
   const timesOfDay = day();
-  const bgNum = String(getRandomNum(1, 20)).padStart(2, '0');
+  bgNum = String(getRandomNum(1, 20)).padStart(2, '0');
   const img = `'https://raw.githubusercontent.com/SvetlanaVl/stage1-tasks/assets/images/${timesOfDay}/${bgNum}.jpg?raw=true'`;
   
   function day() {
@@ -106,19 +109,28 @@ function setBg() {
 setBg();
 
 function getSlideNext() {
-  // randomNum = String(getRandomNum(1, 20)).padStart(2, '0');
-  // if(randomNum === '20') {
-  //   randomNum = '01';
-  // }else if(randomNum < 20) {
-  //   randomNum = String(Number(randomNum) + 1).padStart(2, '0');
-  // }
+  bgNum = String(getRandomNum(1, 20)).padStart(2, '0');
+  if(bgNum === '20') {
+    bgNum = '01';
+  }else if(bgNum < 20) {
+    bgNum = String(Number(bgNum) + 1).padStart(2, '0');
+  }
   setBg();
+
+  console.log(bgNum)
 
 }
 slideNext.addEventListener('click', getSlideNext);
 
 function getSlidePrev() {
+  bgNum = String(getRandomNum(1, 20)).padStart(2, '0');
+  if(bgNum === '01') {
+    bgNum = '20';
+  }else if(bgNum < 20) {
+    bgNum = String(Number(bgNum) - 1).padStart(2, '0');
+  }
   setBg()
+  console.log(bgNum)
 }
 slidePrev.addEventListener('click', getSlidePrev);
 
@@ -131,7 +143,6 @@ async function getWeather() {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=Minsk&lang=ru&appid=05363d60e9bf09f12042afb599fe8cb9&units=metric`;
   const res = await fetch(url);
   const data = await res.json(); 
-  console.log(data.weather[0].id, data.weather[0].description, data.main.temp);
   
   weatherIcon.className = 'weather-icon owf';
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
@@ -144,7 +155,6 @@ async function getWeatherCity() {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=ru&appid=05363d60e9bf09f12042afb599fe8cb9&units=metric`;
   const res = await fetch(url);
   const data = await res.json(); 
-  console.log(data.weather[0].id, data.weather[0].description, data.main.temp);
   
   weatherIcon.className = 'weather-icon owf';
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
@@ -154,4 +164,26 @@ async function getWeatherCity() {
 city.addEventListener('change', getWeatherCity);
 
 // quote of the Day
+let clicks = 0;
+async function getQuotes() {  
+  const quotes = 'data.json';
+  const res = await fetch(quotes);
+  const data = await res.json(); 
+  const quoteText = data[0].text;
+  const authorText = data[0].author;
+  console.log(quoteText);
+  
+    clicks += 1;
+    console.log(clicks);
+    console.log(data);
 
+    quote.textContent = quoteText;
+    author.textContent = authorText;
+
+  
+
+  
+}
+
+
+changeQuote.addEventListener('click', getQuotes);
