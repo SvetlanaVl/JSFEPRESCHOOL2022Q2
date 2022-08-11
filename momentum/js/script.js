@@ -14,7 +14,7 @@ const quote = document.querySelector('.quote');
 const author = document.querySelector('.author');
 
 
-let bgNum;
+let bgNum = String(getRandomNum(1, 20)).padStart(2, '0');
 
 // clock and calendar
 
@@ -59,20 +59,19 @@ function getTimeOfDay() {
 
 function setLocalStorage() {
   localStorage.setItem('name', name.value);
+  localStorage.setItem('city', city.value);
 }
 window.addEventListener('beforeunload', setLocalStorage)
 
 function getLocalStorage() {
   if(localStorage.getItem('name')) {
     name.value = localStorage.getItem('name');
+    city.value = localStorage.getItem('city');
   }
 }
 window.addEventListener('load', getLocalStorage);
 
 // slider
-
-
-// the background image is formed taking into account the time of day and a random number of the image
 
 
 function getRandomNum(min, max) {
@@ -85,9 +84,8 @@ function setBg() {
   const date = new Date();
   const hours = date.getHours();
   const timesOfDay = day();
-  bgNum = String(getRandomNum(1, 20)).padStart(2, '0');
-  const img = `'https://raw.githubusercontent.com/SvetlanaVl/stage1-tasks/assets/images/${timesOfDay}/${bgNum}.jpg?raw=true'`;
-  
+  const img = new Image();
+  img.src = `https://raw.githubusercontent.com/SvetlanaVl/stage1-tasks/assets/images/${timesOfDay}/${bgNum}.jpg?raw=true`;
   function day() {
     if (hours >= 6 && hours < 12) {
       return 'morning';
@@ -100,37 +98,37 @@ function setBg() {
     }
   }
   
-  body.style.backgroundImage = `url(${img})`;
+  img.onload = () => {   
+    body.style.backgroundImage = `url('${img.src}')`;
+  };
+  img.onerror = function() {
+    alert("Ошибка загрузки " + this.src); // Ошибка загрузки https://example.com/404.js
+  };
 
 }
-
-
 
 setBg();
 
 function getSlideNext() {
-  bgNum = String(getRandomNum(1, 20)).padStart(2, '0');
   if(bgNum === '20') {
     bgNum = '01';
   }else if(bgNum < 20) {
     bgNum = String(Number(bgNum) + 1).padStart(2, '0');
   }
+
   setBg();
 
-  console.log(bgNum)
 
 }
 slideNext.addEventListener('click', getSlideNext);
 
 function getSlidePrev() {
-  bgNum = String(getRandomNum(1, 20)).padStart(2, '0');
   if(bgNum === '01') {
     bgNum = '20';
   }else if(bgNum < 20) {
     bgNum = String(Number(bgNum) - 1).padStart(2, '0');
   }
   setBg()
-  console.log(bgNum)
 }
 slidePrev.addEventListener('click', getSlidePrev);
 
@@ -149,6 +147,7 @@ async function getWeather() {
   temperature.textContent = `${data.main.temp}°C`;
   weatherDescription.textContent = data.weather[0].description;
 }
+
 getWeather()
 
 async function getWeatherCity() {
@@ -161,7 +160,12 @@ async function getWeatherCity() {
   temperature.textContent = `${data.main.temp}°C`;
   weatherDescription.textContent = data.weather[0].description;
 }
+
 city.addEventListener('change', getWeatherCity);
+
+
+
+
 
 // quote of the Day
 let clicks = 0;
