@@ -16,10 +16,15 @@
         <button class="play player-icon"></button>
         <button class="play-next player-icon"></button>
       </div>
+      <div class="progress">
+        <input type="range" class="progress-bar" min="0" max="" value="0" />
+        <div class="currentTime"></div>
+        <div class="durationTime"></div>
+      </div>
       <ul class="play-list"></ul>
     </div>
     <div class="weather">
-      <input type="text" class="city" placeholder="Minsk" />
+      <input type="text" class="city" />
       <i class="weather-icon owf"></i>
       <div class="weather-error"></div>
       <div class="description-container">
@@ -49,6 +54,7 @@
       <div class="author"></div>
     </div>
   </footer>
-  <script src="js/script.js"></script>
+  <script type="module" src="js/script.js"></script>
+  <script src="js/self-esteem.js"></script>
 </body>
 </html>

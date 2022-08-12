@@ -1,3 +1,6 @@
+import playList from './playList.js';
+console.log(playList);
+
 const time = document.querySelector('.time');
 const day = document.querySelector('.date');
 const greeting = document.querySelector('.greeting');
@@ -8,32 +11,45 @@ const slideNext = document.querySelector('.slide-next');
 const weatherIcon = document.querySelector('.weather-icon');
 const temperature = document.querySelector('.temperature');
 const weatherDescription = document.querySelector('.weather-description');
+const wind = document.querySelector('.wind');
+const humidity = document.querySelector('.humidity');
+const weatherError = document.querySelector('.weather-error');
 const city = document.querySelector('.city');
 const changeQuote = document.querySelector('.change-quote');
 const quote = document.querySelector('.quote');
 const author = document.querySelector('.author');
+const play = document.querySelector('.play');
+const buttonPlayPrev = document.querySelector('.play-prev');
+const buttonPlayNext = document.querySelector('.play-next');
+const album = document.querySelector('.play-list');
+const progressBar = document.querySelector('.progress-bar');
+const durationTime = document.querySelector('.durationTime');
 
 
-let bgNum = String(getRandomNum(1, 20)).padStart(2, '0');
 
 // clock and calendar
 
 function showTime() {
   const date = new Date();
   const currentTime = date.toLocaleTimeString();
+
   time.textContent = currentTime;
+
   getTimeOfDay();
   showDate();
   setTimeout(showTime, 1000);
   
 }
+
 showTime();
 
 function showDate() {
   const date = new Date();
   const options = {weekday: 'long', month: 'long', day: 'numeric', timeZone: 'UTC'};
   const currentDate = date.toLocaleDateString('en-US', options);
+
   day.textContent = currentDate;
+
   setTimeout(showDate, 1000);
 }
 
@@ -55,20 +71,29 @@ function getTimeOfDay() {
   } 
 }
 
-// user name
+// Local Storage
 
 function setLocalStorage() {
+  if (city.value === '') {
+    city.value = 'Minsk';
+  }
+
   localStorage.setItem('name', name.value);
   localStorage.setItem('city', city.value);
 }
+
 window.addEventListener('beforeunload', setLocalStorage)
 
 function getLocalStorage() {
   if(localStorage.getItem('name')) {
     name.value = localStorage.getItem('name');
+  }
+
+  if(localStorage.getItem('city')) {
     city.value = localStorage.getItem('city');
   }
 }
+
 window.addEventListener('load', getLocalStorage);
 
 // slider
@@ -80,12 +105,15 @@ function getRandomNum(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+let bgNum = String(getRandomNum(1, 20)).padStart(2, '0');
+
 function setBg() {  
   const date = new Date();
   const hours = date.getHours();
   const timesOfDay = day();
   const img = new Image();
   img.src = `https://raw.githubusercontent.com/SvetlanaVl/stage1-tasks/assets/images/${timesOfDay}/${bgNum}.jpg?raw=true`;
+  
   function day() {
     if (hours >= 6 && hours < 12) {
       return 'morning';
@@ -101,8 +129,9 @@ function setBg() {
   img.onload = () => {   
     body.style.backgroundImage = `url('${img.src}')`;
   };
+
   img.onerror = function() {
-    alert("Ошибка загрузки " + this.src); // Ошибка загрузки https://example.com/404.js
+    alert("Ошибка загрузки " + this.src);
   };
 
 }
@@ -117,22 +146,21 @@ function getSlideNext() {
   }
 
   setBg();
-
-
 }
+
 slideNext.addEventListener('click', getSlideNext);
 
 function getSlidePrev() {
   if(bgNum === '01') {
     bgNum = '20';
-  }else if(bgNum < 20) {
+  }else if(bgNum <= 20) {
     bgNum = String(Number(bgNum) - 1).padStart(2, '0');
   }
+
   setBg()
 }
+
 slidePrev.addEventListener('click', getSlidePrev);
-
-
 
 
 // weather
@@ -141,11 +169,17 @@ async function getWeather() {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=Minsk&lang=ru&appid=05363d60e9bf09f12042afb599fe8cb9&units=metric`;
   const res = await fetch(url);
   const data = await res.json(); 
+
+  // if (res.cod === '404') {
+  //   weatherError.textContent = `Error! city not found for ${city.value}!`;
+  // } 
   
   weatherIcon.className = 'weather-icon owf';
   weatherIcon.classList.add(`owf-${data.weather[0].id}`);
-  temperature.textContent = `${data.main.temp}°C`;
+  temperature.textContent = `${Math.ceil(data.main.temp)}°C`;
   weatherDescription.textContent = data.weather[0].description;
+  wind.textContent = `Wind speed: ${Math.ceil(data.wind.speed)} m/c`;
+  humidity.textContent = `Humidity: ${Math.ceil(data.main.humidity)} %`;
 }
 
 getWeather()
@@ -164,30 +198,101 @@ async function getWeatherCity() {
 city.addEventListener('change', getWeatherCity);
 
 
-
-
-
 // quote of the Day
-let clicks = 0;
+
 async function getQuotes() {  
   const quotes = 'data.json';
   const res = await fetch(quotes);
-  const data = await res.json(); 
-  const quoteText = data[0].text;
-  const authorText = data[0].author;
-  console.log(quoteText);
-  
-    clicks += 1;
-    console.log(clicks);
-    console.log(data);
+  const data = await res.json();
+  const quoteText = data[getRandomNum(0, data.length)].text;
+  const authorText = data[getRandomNum(0, data.length)].author;
 
-    quote.textContent = quoteText;
-    author.textContent = authorText;
+  quote.textContent = quoteText;
+  author.textContent = authorText;
+}
 
-  
+getQuotes();
 
-  
+changeQuote.addEventListener('click', getQuotes);
+
+// Audio player
+
+let isPlay = false;
+
+const audio = new Audio();
+
+function playAudio() {  
+  if (isPlay === false) {
+    audio.src = playList[playNum].src;
+    audio.currentTime = 0;
+
+    isPlay = true;
+
+    audio.play();
+
+  } else {
+    audio.pause();
+
+    isPlay = false;
+  }
+
+  play.classList.toggle('pause');
+
 }
 
 
-changeQuote.addEventListener('click', getQuotes);
+play.addEventListener('click', playAudio);
+
+let playNum = 0;
+
+function playNext() {
+  if (playNum === (playList.length - 1)) {
+    playNum = 0;
+  } else if (playNum < (playList.length - 1)) {
+    playNum = playNum + 1;
+  }
+  isPlay = false;
+
+  playAudio();
+
+  play.classList.toggle('pause');
+}
+
+buttonPlayNext.addEventListener('click', playNext);
+
+function playPrev() {
+  if (playNum === 0) {
+    playNum = playList.length -1;
+  } else if (playNum <= (playList.length -1)) {
+    playNum = playNum - 1;
+  }
+
+  isPlay = false;
+
+  playAudio();
+
+  play.classList.toggle('pause');
+}
+
+buttonPlayPrev.addEventListener('click', playPrev);
+
+audio.classList.add('item-active');
+
+for(let i = 0; i < playList.length; i++) {
+
+  const li = document.createElement('li');
+
+  li.classList.add('play-item');
+
+  li.textContent = playList[i].title;
+
+  album.append(li);
+  
+  // li.classList.add('item-active');
+  
+}
+
+audio.addEventListener('ended', function() {
+
+  playPrev();
+});
