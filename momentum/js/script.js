@@ -24,7 +24,7 @@ const buttonPlayNext = document.querySelector('.play-next');
 const album = document.querySelector('.play-list');
 const progressBar = document.querySelector('.progress-bar');
 const durationTime = document.querySelector('.durationTime');
-
+const currentTime = document.querySelector('.currentTime');
 
 
 // clock and calendar
@@ -238,6 +238,9 @@ function playAudio() {
 
   play.classList.toggle('pause');
 
+  showDurationTime ()
+
+  setInterval(progressValue, 100);
 }
 
 
@@ -288,6 +291,7 @@ for(let i = 0; i < playList.length; i++) {
 
   album.append(li);
   
+  
   // li.classList.add('item-active');
   
 }
@@ -296,3 +300,57 @@ audio.addEventListener('ended', function() {
 
   playPrev();
 });
+
+function showDurationTime () {
+  let audioLength = playList[playNum].duration;
+  let audioTime = Math.round(audio.currentTime);
+
+  progressBar.style.width = (audioTime * 100) / audioLength + '%';
+
+  
+
+  durationTime.textContent = audioLength;
+  console.log(audioTime)
+};
+
+
+progressBar.addEventListener("click", e => {
+  const timelineWidth = window.getComputedStyle(progressBar).width;
+  const timeToSeek = e.offsetX / parseInt(timelineWidth) * audio.duration;
+  audio.currentTime = timeToSeek;
+}, false);
+
+function progressValue () {
+  progressBar.style.width = audio.currentTime / audio.duration * 100 + "%";
+  currentTime.textContent = formatTime(audio.currentTime);
+}
+
+function formatTime(seconds) {
+  let min = Math.floor((seconds / 60));
+  let sec = Math.floor(seconds - (min * 60));
+  if (sec < 10){ 
+      sec  = `0${sec}`;
+  };
+  return `${min}:${sec}`;
+};
+
+
+
+// audioPlay = setInterval(function() {
+//   // Получаем значение на какой секунде песня
+//   let audioTime = Math.round(audio.currentTime);
+//   // Получаем всё время песни
+//   let audioLength = Math.round(audio.duration)
+//   // Назначаем ширину элементу time
+//   time.style.width = (audioTime * 100) / audioLength + '%';
+//   // Сравниваем, на какой секунде сейчас трек и всего сколько времени длится
+//   // И проверяем что переменная treck меньше четырёх
+//   if (audioTime == audioLength && treck < 3) {
+//       treck++; // То Увеличиваем переменную 
+//       switchTreck(treck); // Меняем трек
+//   // Иначе проверяем тоже самое, но переменная treck больше или равна четырём
+//   } else if (audioTime == audioLength && treck >= 3) {
+//       treck = 0; // То присваиваем treck ноль
+//       switchTreck(treck); Меняем трек
+//   }
+// }, 10)

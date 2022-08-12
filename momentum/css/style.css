@@ -284,3 +284,8 @@ body {
     padding: 5px;
   }
 }
+
+.time {
+  display: flex;
+
+}
