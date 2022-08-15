@@ -16,10 +16,14 @@
         <button class="play player-icon"></button>
         <button class="play-next player-icon"></button>
       </div>
+      <div class="play-item-active"></div>
       <div class="progress">
         <input type="range" class="progress-bar" min="0" max="" value="0" />
-        <div class="currentTime"></div>
-        <div class="durationTime"></div>
+        <div class="time-container">
+          <div class="currentTime">00:00</div>
+          <div class="separatorTime"> / </div>
+        <div class="durationTime">00:00</div>
+        </div>
       </div>
       <ul class="play-list"></ul>
     </div>
@@ -54,7 +58,11 @@
       <div class="author"></div>
     </div>
   </footer>
-  <script type="module" src="js/script.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/clockCalendarAndGreeting.js"></script>
   <script src="js/self-esteem.js"></script>
+  <script src="js/imageSlider.js"></script>
+  <script src="js/quoteOfTheDay.js"></script>
+  <script type="module" src="js/audioPlayer.js"></script>
 </body>
 </html>
