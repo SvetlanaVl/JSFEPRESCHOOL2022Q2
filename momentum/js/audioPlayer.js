@@ -1,5 +1,4 @@
 import playList from "./playList.js";
-console.log(playList);
 
 const play = document.querySelector(".play");
 const buttonPlayPrev = document.querySelector(".play-prev");
@@ -9,6 +8,10 @@ const progressBar = document.querySelector(".progress-bar");
 const durationTime = document.querySelector(".durationTime");
 const currentTime = document.querySelector(".currentTime");
 const playItemActive = document.querySelector(".play-item-active");
+const sound = document.querySelector(".sound");
+const volumeImage = document.querySelector(".volume-image");
+const playIcons = document.querySelectorAll('.play-item');
+
 
 // Audio player
 
@@ -17,6 +20,8 @@ let isPlay = false;
 const audio = new Audio();
 
 let audioActive = "";
+
+// Play - Pause
 
 function playAudio() {
   if (isPlay === false) {
@@ -29,10 +34,6 @@ function playAudio() {
 
     audioActive = playList[playNum].title;
 
-    // playItemActive.textContent = 'audioActive'
-    playItemActive.textContent = "yes";
-
-    console.log(audioActive);
   } else {
     audio.pause();
 
@@ -43,12 +44,17 @@ function playAudio() {
 
   showDurationTime();
 
-  setInterval(progressValue, 100);
+  setInterval(progressCurrentTime, 100);
 
   activeAudio();
+
+  playNow()
+  
 }
 
 play.addEventListener("click", playAudio);
+
+// play Next - play Prev
 
 let playNum = 0;
 
@@ -58,7 +64,12 @@ function playNext() {
   } else if (playNum < playList.length - 1) {
     playNum = playNum + 1;
   }
-  isPlay = false;
+
+  if (isPlay === false) {
+    isPlay = true;
+  } else {
+    isPlay = false;
+  }
 
   playAudio();
 
@@ -74,7 +85,11 @@ function playPrev() {
     playNum = playNum - 1;
   }
 
-  isPlay = false;
+  if (isPlay === false) {
+    isPlay = true;
+  } else {
+    isPlay = false;
+  }
 
   playAudio();
 
@@ -83,23 +98,32 @@ function playPrev() {
 
 buttonPlayPrev.addEventListener("click", playPrev);
 
-audio.classList.add("item-active");
+// Play List
 
-for (let i = 0; i < playList.length; i++) {
-  const li = document.createElement("li");
 
-  li.classList.add("play-item");
+function seePlayList() {
+  for (let i = 0; i < playList.length; i++) {
+    const li = document.createElement("li");
+  
+    li.classList.add("play-item");
+  
+    li.textContent = playList[i].title;
+  
+    album.append(li);
 
-  li.textContent = playList[i].title;
+    li.classList.add("play-icon-list");
+  }
 
-  album.append(li);
-
-  // li.classList.add('item-active');
 }
+seePlayList()
+
+// self-switching
 
 audio.addEventListener("ended", function () {
   playPrev();
 });
+
+// show Duration Time
 
 function showDurationTime() {
   let audioLength = playList[playNum].duration;
@@ -110,18 +134,11 @@ function showDurationTime() {
   durationTime.textContent = audioLength;
 }
 
-progressBar.addEventListener(
-  "click",
-  (e) => {
-    const timelineWidth = window.getComputedStyle(progressBar).width;
-    const timeToSeek = (e.offsetX / parseInt(timelineWidth)) * audio.duration;
-    audio.currentTime = timeToSeek;
-  },
-  false
-);
+// progress Current Time
 
-function progressValue() {
-  // progressBar.style.width = audio.currentTime / audio.duration * 100 + "%";
+function progressCurrentTime() {
+  progressBar.ontimeupdate = audio.currentTime / audio.duration * 100 + "%";
+
   currentTime.textContent = formatTime(audio.currentTime);
 }
 
@@ -134,26 +151,88 @@ function formatTime(seconds) {
   return `${min}:${sec}`;
 }
 
+// click progress Current Time on progressBar
+
+progressBar.addEventListener('click', (e) => {
+  const timelineWidth = window.getComputedStyle(progressBar).width;
+  const timeToSeek = (e.offsetX / parseInt(timelineWidth)) * audio.duration;
+  audio.currentTime = timeToSeek;
+},
+false
+);
+
+// name active Audio
+
 function activeAudio() {
   playItemActive.textContent = playList.title;
-  console.log(audio);
 }
 
-// audioPlay = setInterval(function() {
-//   // Получаем значение на какой секунде песня
-//   let audioTime = Math.round(audio.currentTime);
-//   // Получаем всё время песни
-//   let audioLength = Math.round(audio.duration)
-//   // Назначаем ширину элементу time
-//   time.style.width = (audioTime * 100) / audioLength + '%';
-//   // Сравниваем, на какой секунде сейчас трек и всего сколько времени длится
-//   // И проверяем что переменная treck меньше четырёх
-//   if (audioTime == audioLength && treck < 3) {
-//       treck++; // То Увеличиваем переменную
-//       switchTreck(treck); // Меняем трек
-//   // Иначе проверяем тоже самое, но переменная treck больше или равна четырём
-//   } else if (audioTime == audioLength && treck >= 3) {
-//       treck = 0; // То присваиваем treck ноль
-//       switchTreck(treck); Меняем трек
-//   }
-// }, 10)
+
+function playNow() {
+  const playItems = document.querySelectorAll('.play-item');
+
+  for(let i = 0; i < playItems.length; i++){
+    if (playList[playNum].title == playItems[i].textContent) {
+      playItemActive.textContent = playList[playNum].title;
+    }
+  }
+}
+
+// audio volume
+
+audio.volume = 0.4;
+
+sound.addEventListener('click', (e) => {
+  const volumeLineWidth = window.getComputedStyle(sound).width;
+  const volumeToSeek = e.offsetX / parseInt(volumeLineWidth);
+  audio.volume = volumeToSeek
+  
+},
+false
+);
+
+// on or off the sound
+
+function onSound() {
+  if(audio.volume > 0) {
+    audio.volume = 0
+  } else {
+    audio.volume = 0.4;
+  }
+  
+}
+
+volumeImage.addEventListener("click", onSound);
+
+// start and stop playing a track by clicking on the button next to it in the playlist
+
+function clickOnIcon() {
+  console.log('yes')
+  
+}
+
+
+for (let i = 0; i < playIcons.length; i += 1) {
+  playIcons[i].addEventListener("click", clickOnIcon);
+}
+
+// audio.ontimeupdate = function(){
+//   progressBar.value = audio.currentTime / audio.duration * 100 + "%";
+  // console.log(progressBar.ontimeupdate = audio.currentTime / audio.duration * 100)
+// };
+// progressBar.addEventListener('click', (e) => {
+//   const progressBarLineWidth = window.getComputedStyle(progressBar).width;
+//   const progressBarToSeek = e.offsetX / parseInt(progressBarLineWidth);
+//   progressBar.timeupdate = progressBarToSeek
+  
+// },
+// false
+// );
+
+
+
+
+
+
+
+
