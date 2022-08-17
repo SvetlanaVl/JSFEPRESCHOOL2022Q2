@@ -38,32 +38,26 @@ window.addEventListener("load", getLocalStorage);
 // weather
 
 async function getWeather() {
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=Minsk&lang=en&appid=05363d60e9bf09f12042afb599fe8cb9&units=metric`;
-  const res = await fetch(url);
-  const data = await res.json();
-
-  // if (res.cod != '404') {
-  //   weatherError.textContent = '';
-  // } else if (res.cod === '404'){
-  //   weatherError.textContent = `Error! city not found for ${city.value}!`;
-  // }
-
-  // if (city.value = '') {
-  //   weatherError.textContent = 'Error!';
-  // }
   
-  weatherIcon.className = "weather-icon owf";
-  weatherIcon.classList.add(`owf-${data.weather[0].id}`);
-  temperature.textContent = `${Math.ceil(data.main.temp)}°C`;
-  weatherDescription.textContent = data.weather[0].description;
-  wind.textContent = `Wind speed: ${Math.ceil(data.wind.speed)} m/c`;
-  humidity.textContent = `Humidity: ${Math.ceil(data.main.humidity)} %`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=Minsk&lang=en&appid=05363d60e9bf09f12042afb599fe8cb9&units=metric`;
+    const res = await fetch(url);
+    const data = await res.json();
+  
+    weatherIcon.className = "weather-icon owf";
+    weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+    temperature.textContent = `${Math.ceil(data.main.temp)}°C`;
+    weatherDescription.textContent = data.weather[0].description;
+    wind.textContent = `Wind speed: ${Math.ceil(data.wind.speed)} m/c`;
+    humidity.textContent = `Humidity: ${Math.ceil(data.main.humidity)} %`;
+    weatherError.textContent = '';
 }
 
 
 getWeather();
+city.addEventListener("change", getWeather);
 
 async function getWeatherCity() {
+  try {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=05363d60e9bf09f12042afb599fe8cb9&units=metric`;
   const res = await fetch(url);
   const data = await res.json();
@@ -74,37 +68,25 @@ async function getWeatherCity() {
   weatherDescription.textContent = data.weather[0].description;
   wind.textContent = `Wind speed: ${Math.ceil(data.wind.speed)} m/c`;
   humidity.textContent = `Humidity: ${Math.ceil(data.main.humidity)} %`;
+
+} catch {
+  weatherError.textContent = `Sorry! City '${city.value}' not found!`;
+  temperature.textContent = '';
+  weatherDescription.textContent = '';
+  wind.textContent = '';
+  humidity.textContent = '';
+}
 }
 
-// city.addEventListener("change", getWeatherCity);
+city.addEventListener("change", getWeatherCity);
 
-city.addEventListener('keydown', function(event) {
-  if(event.keyCode === 13) {
+// city.addEventListener('keydown', function(event) {
+//   if(event.keyCode === 13) {
     
-    getWeather();
-    city.addEventListener("change", getWeatherCity);
-    console.log("yes");
-  } else {
-    console.log('no');
-  }
-})
-// const i = document.querySelector('i');
-//     if(console.log(i.classList.contains('owf-804'))) {
-//       weatherError.textContent = '';
-//     } else {
-//       weatherError.textContent = `Error! city not found for ${city.value}!`;
-//     };
-// const iconClass = document.querySelector('.owf-804')
-// // if(weatherIcon.classList.contains('active'))
-
-// weatherIcon.addEventListener('click', selectDate);
-
-// function selectDate(){
-//     if(iconClass.contains('active')){
-//         console.log('YES')
-//     }else {
-//       console.log('NO')
-//     }
-// }
-// const i = document.querySelector('i');
-// console.log(i.classList.contains('owf-804'));
+//     // getWeather();
+//     city.addEventListener("change", getWeatherCity);
+//     console.log("yes");
+//   } else {
+//     console.log('no');
+//   }
+// })

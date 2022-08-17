@@ -10,8 +10,6 @@ const currentTime = document.querySelector(".currentTime");
 const playItemActive = document.querySelector(".play-item-active");
 const sound = document.querySelector(".sound");
 const volumeImage = document.querySelector(".volume-image");
-const playIcons = document.querySelectorAll('.play-item');
-
 
 // Audio player
 
@@ -33,7 +31,6 @@ function playAudio() {
     audio.play();
 
     audioActive = playList[playNum].title;
-
   } else {
     audio.pause();
 
@@ -48,8 +45,9 @@ function playAudio() {
 
   activeAudio();
 
-  playNow()
-  
+  playNow();
+
+  itemActive();
 }
 
 play.addEventListener("click", playAudio);
@@ -100,22 +98,20 @@ buttonPlayPrev.addEventListener("click", playPrev);
 
 // Play List
 
-
 function seePlayList() {
   for (let i = 0; i < playList.length; i++) {
     const li = document.createElement("li");
-  
+
     li.classList.add("play-item");
-  
+
     li.textContent = playList[i].title;
-  
+
     album.append(li);
 
     li.classList.add("play-icon-list");
   }
-
 }
-seePlayList()
+seePlayList();
 
 // self-switching
 
@@ -137,7 +133,7 @@ function showDurationTime() {
 // progress Current Time
 
 function progressCurrentTime() {
-  progressBar.ontimeupdate = audio.currentTime / audio.duration * 100 + "%";
+  progressBar.ontimeupdate = (audio.currentTime / audio.duration) * 100 + "%";
 
   currentTime.textContent = formatTime(audio.currentTime);
 }
@@ -153,12 +149,14 @@ function formatTime(seconds) {
 
 // click progress Current Time on progressBar
 
-progressBar.addEventListener('click', (e) => {
-  const timelineWidth = window.getComputedStyle(progressBar).width;
-  const timeToSeek = (e.offsetX / parseInt(timelineWidth)) * audio.duration;
-  audio.currentTime = timeToSeek;
-},
-false
+progressBar.addEventListener(
+  "click",
+  (e) => {
+    const timelineWidth = window.getComputedStyle(progressBar).width;
+    const timeToSeek = (e.offsetX / parseInt(timelineWidth)) * audio.duration;
+    audio.currentTime = timeToSeek;
+  },
+  false
 );
 
 // name active Audio
@@ -167,13 +165,24 @@ function activeAudio() {
   playItemActive.textContent = playList.title;
 }
 
+const playItems = document.querySelectorAll(".play-item");
 
 function playNow() {
-  const playItems = document.querySelectorAll('.play-item');
-
-  for(let i = 0; i < playItems.length; i++){
+  for (let i = 0; i < playItems.length; i++) {
     if (playList[playNum].title == playItems[i].textContent) {
       playItemActive.textContent = playList[playNum].title;
+    }
+  }
+}
+
+// item Active
+
+function itemActive() {
+  for (let i = 0; i < playItems.length; i++) {
+    if (playList[playNum].title == playItems[i].textContent) {
+      playItems[i].classList.add("active");
+    } else {
+      playItems[i].classList.remove("active");
     }
   }
 }
@@ -182,57 +191,50 @@ function playNow() {
 
 audio.volume = 0.4;
 
-sound.addEventListener('click', (e) => {
-  const volumeLineWidth = window.getComputedStyle(sound).width;
-  const volumeToSeek = e.offsetX / parseInt(volumeLineWidth);
-  audio.volume = volumeToSeek
-  
-},
-false
+sound.addEventListener(
+  "click",
+  (e) => {
+    const volumeLineWidth = window.getComputedStyle(sound).width;
+    const volumeToSeek = e.offsetX / parseInt(volumeLineWidth);
+    audio.volume = volumeToSeek;
+  },
+  false
 );
 
 // on or off the sound
 
 function onSound() {
-  if(audio.volume > 0) {
-    audio.volume = 0
+  if (audio.volume > 0) {
+    audio.volume = 0;
   } else {
     audio.volume = 0.4;
   }
-  
 }
 
 volumeImage.addEventListener("click", onSound);
 
 // start and stop playing a track by clicking on the button next to it in the playlist
 
-function clickOnIcon() {
-  console.log('yes')
-  
-}
+// function clickOnIcon() {
+//   itemActive()
+//   playAudio ()
+//   isPlay = false
+// }
 
+// for (let i = 0; i < playItems.length; i += 1) {
+//   playItems[i].addEventListener("click", clickOnIcon);
 
-for (let i = 0; i < playIcons.length; i += 1) {
-  playIcons[i].addEventListener("click", clickOnIcon);
-}
+// }
 
 // audio.ontimeupdate = function(){
 //   progressBar.value = audio.currentTime / audio.duration * 100 + "%";
-  // console.log(progressBar.ontimeupdate = audio.currentTime / audio.duration * 100)
+// console.log(progressBar.ontimeupdate = audio.currentTime / audio.duration * 100)
 // };
 // progressBar.addEventListener('click', (e) => {
 //   const progressBarLineWidth = window.getComputedStyle(progressBar).width;
 //   const progressBarToSeek = e.offsetX / parseInt(progressBarLineWidth);
 //   progressBar.timeupdate = progressBarToSeek
-  
+
 // },
 // false
 // );
-
-
-
-
-
-
-
-
