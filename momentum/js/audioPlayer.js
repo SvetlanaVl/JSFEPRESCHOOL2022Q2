@@ -116,7 +116,7 @@ seePlayList();
 // self-switching
 
 audio.addEventListener("ended", function () {
-  playPrev();
+  playNext();
 });
 
 // show Duration Time
